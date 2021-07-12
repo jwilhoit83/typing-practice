@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="keyboard.svg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Typing Practice</title>
+</head>
+
+<body>
+    <button id="settings-btn" class="settings-btn">
+        <span class="material-icons-outlined">
+            settings
+        </span>
+    </button>
+    <div id="settings" class="settings">
+        <form id="settings-form">
+            <div>
+                <label for="duration">Duration</label>
+                <select id="duration">
+                    <option value=30>Short</option>
+                    <option value=60>Medium</option>
+                    <option value=120>Long</option>
+                </select>
+            </div>
+        </form>
+    </div>
+    <div class="container">
+        <h2>How fast can you type?</h2>
+
+        <p>Type the following:</p>
+
+        <h1 id="word"></h1>
+
+        <input type="text" id="text" autocomplete="off" placeholder='Type the word here...'>
+
+        <button id="start-btn" class="start-btn">Start Timer</button>
+
+        <p class="time-container">
+            Time left: <span id="time"></span>
+        </p>
+
+        <p class="score-container">
+            WPM: <span id="score">0</span>
+        </p>
+
+        <div id="end-game-container" class="end-game-container">
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
