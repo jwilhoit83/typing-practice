@@ -38,14 +38,24 @@ body {
   border-radius: 5px;
   position: relative;
   text-align: center;
-  width: 500px;
+  max-width: 500px;
 }
 
 .chart-container {
   background-color: rgba(255, 255, 255, 0.1);
-  width: 500px;
+  max-width: 500px;
   border-radius: 5px;
   padding: 1.25rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats p {
+  font-size: 0.75rem;
 }
 
 .btn {
@@ -72,6 +82,8 @@ body {
 p {
   margin: 0.5rem;
 }
+
+
 
 select,
 input[type='text'] {
