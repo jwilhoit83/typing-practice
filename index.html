@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="keyboard.svg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <title>Typing Practice</title>
 </head>
@@ -29,31 +30,43 @@
             </div>
         </form>
     </div>
-    <div class="container">
-        <div class="scoreboard">
-            <p class="time-container">
-                Time left: <span id="time"></span>
-            </p>
+    <div class="flex">
 
-            <p class="score-container">
-                WPM: <span id="score">0</span>
-            </p>
+        <div class="container">
+            <div class="scoreboard">
+                <p class="time-container">
+                    Time left: <span id="time"></span>
+                </p>
+
+                <p class="score-container">
+                    WPM: <span id="score">0</span>
+                </p>
+            </div>
+
+            <h3>Type the following:</h3>
+
+            <h1 id="word">&nbsp</h1>
+
+            <input type="text" id="text" autocomplete="off" placeholder='Type the words here...'>
+
+            <button id="start-btn" class="btn start-btn">
+                Start Timer
+            </button>
+
+            <div id="end-game-container" class="end-game-container">
+                <h1>Time ran out</h1>
+                <p>Your final score is <span id='wpm'></span> words per minute</p>
+                <p>Accuracy: <span id='accuracy'></span></p>
+                <button id='reset' class='btn'>Try Again</button>
+            </div>
+
+
         </div>
-
-        <h3>Type the following:</h3>
-
-        <h1 id="word">&nbsp</h1>
-
-        <input type="text" id="text" autocomplete="off" placeholder='Type the word here...'>
-
-        <button id="start-btn" class="btn start-btn">Start Timer</button>
-        
-
-
-        <div id="end-game-container" class="end-game-container">
-
+        <div class="chart-container">
+            <canvas id="score-chart" width="500" height="300"></canvas>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
     <script src="script.js"></script>
 </body>
 

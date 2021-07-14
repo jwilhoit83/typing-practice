@@ -3,6 +3,9 @@ const text = document.getElementById('text')
 const scoreEl = document.getElementById('score')
 const timeEl = document.getElementById('time')
 const endgameEl = document.getElementById('end-game-container')
+const wpm = document.getElementById('wpm')
+const accuracy = document.getElementById('accuracy')
+const resetBtn = document.getElementById('reset')
 const startBtn = document.getElementById('start-btn')
 const settingsBtn = document.getElementById('settings-btn')
 const settings = document.getElementById('settings')
@@ -21,9 +24,14 @@ let score
 let time
 let timeInterval
 let index
+let scoresArr = JSON.parse(localStorage.getItem('scores'))
+let wpmArr = scoresArr.map(item => item.score)
+let accuracyArr = scoresArr.map(item => item.accuracy)
 
-// start the game, resetting counters, score, and index as well as randomizing the word list for each game.  
-function startGame() {
+console.log(wpmArr, accuracyArr)
+
+// start the game, resetting counters, score, and index as well as randomizing the word list for each round.
+function startRound() {
   text.focus()
   settings.classList.add('hide')
   index = 0
@@ -67,7 +75,7 @@ function updateTime() {
 
   if (time <= 0) {
     clearInterval(timeInterval)
-    gameOver()
+    roundOver()
     timeEl.className = ''
   }
 }
@@ -77,19 +85,17 @@ function updateScore() {
   scoreEl.innerText = score
 }
 
-function gameOver() {
+function roundOver() {
   text.removeEventListener('input', textListener)
   checkPartialWord()
   updateScore()
   text.value = ''
-
-  endgameEl.innerHTML = `
-        <h1>Time ran out</h1>
-        <p>Your final score is ${score} words per minute</p>
-        <p>Accuracy: ${((correctCount / charCount) * 100).toFixed(0)}%</p>
-        <button onclick="reset()">Try Again</button> 
-    `
+  scoresArr.push({ score, accuracy: ((correctCount / charCount) * 100).toFixed(0) })
+  localStorage.setItem('scores', JSON.stringify(scoresArr))
+  wpm.innerText = score
+  accuracy.innerText = ((correctCount / charCount) * 100).toFixed(0) + '%'
   endgameEl.style.display = 'flex'
+  console.log(JSON.parse(localStorage.getItem('scores')))
 }
 
 function reset() {
@@ -150,8 +156,41 @@ function textListener() {
 
 // event listeners
 
-startBtn.addEventListener('click', startGame)
+startBtn.addEventListener('click', startRound)
 
 settingsBtn.addEventListener('click', () => {
   settings.classList.toggle('hide')
+})
+
+resetBtn.addEventListener('click', reset)
+
+// chart for past scores
+
+const chart = document.getElementById('score-chart')
+let labels = []
+for(let i = 1; i <= wpmArr.length; i++) labels.push(i)
+
+var myChart = new Chart(chart, {
+  type: 'line',
+  data: {
+    labels: labels,
+    datasets: [
+      {
+        label: 'WPM',
+        data: wpmArr,
+        borderColor: '#dadff7',
+        borderWidth: 1,
+        pointBackgroundColor: '#98718c',
+        tension: 0.3,
+      },
+      {
+        label: 'Accuracy',
+        data: accuracyArr,
+        borderColor: '#98718c',
+        borderWidth: 1,
+        pointBackgroundColor: '#dadff7',
+        tension: 0.3,
+      },
+    ],
+  },
 })

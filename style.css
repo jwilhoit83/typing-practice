@@ -24,6 +24,21 @@ body {
   min-height: 100vh;
 }
 
+.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.container {
+  background-color: var(--secondary);
+  padding: 1.25rem;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+  width: 500px;
+}
+
 .btn {
   background-color: transparent;
   color: var(--primary-text);
@@ -91,14 +106,7 @@ input[type='text']:focus {
   transform: translateY(-100%);
 }
 
-.container {
-  background-color: var(--secondary);
-  padding: 1.25rem;
-  border-radius: 5px;
-  position: relative;
-  text-align: center;
-  width: 500px;
-}
+
 
 .scoreboard {
   display: flex;
@@ -107,7 +115,7 @@ input[type='text']:focus {
 }
 
 .end-game-container {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
   border-radius: 5px;
   display: none;
   align-items: center;
