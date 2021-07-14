@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <button id="settings-btn" class="settings-btn">
+    <button id="settings-btn" class="btn settings-btn">
         <span class="material-icons-outlined">
             settings
         </span>
@@ -30,23 +30,25 @@
         </form>
     </div>
     <div class="container">
-        <h2>How fast can you type?</h2>
+        <div class="scoreboard">
+            <p class="time-container">
+                Time left: <span id="time"></span>
+            </p>
 
-        <p>Type the following:</p>
+            <p class="score-container">
+                WPM: <span id="score">0</span>
+            </p>
+        </div>
 
-        <h1 id="word"></h1>
+        <h3>Type the following:</h3>
+
+        <h1 id="word">&nbsp</h1>
 
         <input type="text" id="text" autocomplete="off" placeholder='Type the word here...'>
 
-        <button id="start-btn" class="start-btn">Start Timer</button>
+        <button id="start-btn" class="btn start-btn">Start Timer</button>
+        
 
-        <p class="time-container">
-            Time left: <span id="time"></span>
-        </p>
-
-        <p class="score-container">
-            WPM: <span id="score">0</span>
-        </p>
 
         <div id="end-game-container" class="end-game-container">
 

@@ -6,11 +6,12 @@
 }
 
 :root {
-  --primary: #006064;
-  --primary-text: #e5ffff;
-  --secondary: #428e92;
-  --success: #00363a;
-  --warning: #b71c1c;
+  --primary: #553e4e;
+  --secondary: #98718c;
+  --primary-text: #dadff7;
+  --warning: #F6AE2D;
+  --success: #8DB580;
+  --primary-input: #CED4F3;
 }
 
 body {
@@ -23,14 +24,25 @@ body {
   min-height: 100vh;
 }
 
-button {
-  background-color: var(--primary-text);
-  color: var(--primary);
+.btn {
+  background-color: transparent;
+  color: var(--primary-text);
   cursor: pointer;
+  font-weight: 700;
   border-radius: 5px;
   padding: 0.75rem 1.25rem;
-  border: 0;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--primary-text);
+}
+
+.settings-btn {
+  position: absolute;
+  padding: 0.5rem 0.75rem;
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.start-btn {
+  margin-left: 1rem;
 }
 
 p {
@@ -42,10 +54,9 @@ input[type='text'] {
   width: 200px;
   border: 0;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
   padding: 0.25rem;
   appearance: none;
-  background-color: var(--primary-text);
+  background-color: var(--primary-input);
   color: var(--primary);
 }
 
@@ -60,16 +71,6 @@ button:focus,
 input[type='text']:focus {
   outline: none;
   box-shadow: 0 0 0 1px var(--primary), 0 0 0 2px var(--primary-text);
-}
-
-.settings-btn {
-  position: absolute;
-  bottom: 2rem;
-  left: 2rem;
-}
-
-.start-btn {
-    margin-left: 1rem;
 }
 
 .settings {
@@ -94,50 +95,36 @@ input[type='text']:focus {
   background-color: var(--secondary);
   padding: 1.25rem;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   text-align: center;
   width: 500px;
 }
 
-.container h2 {
-  background-color: rgba(0, 0, 0, 0.2);
-  padding: 0.5rem;
-  border-radius: 5px;
-  margin-bottom: 2.5rem;
-}
-
-.score-container {
-  position: absolute;
-  top: 60px;
-  right: 20px;
-}
-
-.time-container {
-  position: absolute;
-  top: 60px;
-  left: 20px;
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .end-game-container {
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 5px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    position: absolute;
-    top: -12.5%;
-    left: -12.5%;
-    width: 125%;
-    height: 125%;
-    z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: -12.5%;
+  left: -12.5%;
+  width: 125%;
+  height: 125%;
+  z-index: 1;
 }
 
 .success {
-    color: var(--success);
+  color: var(--success);
 }
 
 .warning {
-    color: var(--warning);
+  color: var(--warning);
 }
