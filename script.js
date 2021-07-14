@@ -28,8 +28,6 @@ let scoresArr = JSON.parse(localStorage.getItem('scores'))
 let wpmArr = scoresArr.map(item => item.score)
 let accuracyArr = scoresArr.map(item => item.accuracy)
 
-console.log(wpmArr, accuracyArr)
-
 // start the game, resetting counters, score, and index as well as randomizing the word list for each round.
 function startRound() {
   text.focus()
@@ -89,6 +87,7 @@ function roundOver() {
   text.removeEventListener('input', textListener)
   checkPartialWord()
   updateScore()
+  progressChart.update()
   text.value = ''
   scoresArr.push({ score, accuracy: ((correctCount / charCount) * 100).toFixed(0) })
   localStorage.setItem('scores', JSON.stringify(scoresArr))
@@ -168,9 +167,10 @@ resetBtn.addEventListener('click', reset)
 
 const chart = document.getElementById('score-chart')
 let labels = []
-for(let i = 1; i <= wpmArr.length; i++) labels.push(i)
+for (let i = 1; i <= wpmArr.length; i++) labels.push(i)
 
-var myChart = new Chart(chart, {
+Chart.defaults.color='#dadff7';
+let progressChart = new Chart(chart, {
   type: 'line',
   data: {
     labels: labels,
@@ -194,3 +194,5 @@ var myChart = new Chart(chart, {
     ],
   },
 })
+
+

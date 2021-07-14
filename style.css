@@ -9,9 +9,9 @@
   --primary: #553e4e;
   --secondary: #98718c;
   --primary-text: #dadff7;
-  --warning: #F6AE2D;
-  --success: #8DB580;
-  --primary-input: #CED4F3;
+  --warning: #f6ae2d;
+  --success: #8db580;
+  --primary-input: #ced4f3;
 }
 
 body {
@@ -27,6 +27,8 @@ body {
 .flex {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items:center;
   gap: 3rem;
 }
 
@@ -37,6 +39,13 @@ body {
   position: relative;
   text-align: center;
   width: 500px;
+}
+
+.chart-container {
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 500px;
+  border-radius: 5px;
+  padding: 1.25rem;
 }
 
 .btn {
@@ -105,8 +114,6 @@ input[type='text']:focus {
 .settings.hide {
   transform: translateY(-100%);
 }
-
-
 
 .scoreboard {
   display: flex;
