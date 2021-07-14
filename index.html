@@ -13,25 +13,18 @@
 </head>
 
 <body>
-    <button id="settings-btn" class="btn settings-btn">
-        <span class="material-icons-outlined">
-            settings
-        </span>
-    </button>
     <div id="settings" class="settings">
+        <h3>Typing Practice</h3>
         <form id="settings-form">
-            <div>
-                <label for="duration">Duration</label>
                 <select id="duration">
+                    <option value=30 selected disabled>Select Duration</option>
                     <option value=30>Short</option>
                     <option value=60>Medium</option>
                     <option value=120>Long</option>
                 </select>
-            </div>
         </form>
     </div>
     <div class="flex">
-
         <div class="container">
             <div class="scoreboard">
                 <p class="time-container">
@@ -45,7 +38,7 @@
 
             <h3>Type the following:</h3>
 
-            <h1 id="word">&nbsp</h1>
+            <h2 id="word">&nbsp</h2>
 
             <input type="text" id="text" autocomplete="off" placeholder='Type the words here...'>
 
@@ -76,6 +69,11 @@
             </div>
         </div>
     </div>
+    <button id="settings-btn" class="btn settings-btn">
+        <span class="material-icons-outlined">
+            settings
+        </span>
+    </button>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
     <script src="script.js"></script>
 </body>

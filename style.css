@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 * {
   box-sizing: border-box;
@@ -15,20 +15,33 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: var(--primary);
   color: var(--primary-text);
+  min-height: 100vh;
+}
+
+.settings {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 4rem;
+  transition: opacity 0.4s ease-in-out;
+  margin-bottom: 4rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+  justify-content: space-between;
+}
+
+.settings.hide {
+  opacity: 0;
 }
 
 .flex {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   gap: 3rem;
 }
 
@@ -38,11 +51,13 @@ body {
   border-radius: 5px;
   position: relative;
   text-align: center;
+  width: 90%;
   max-width: 500px;
 }
 
 .chart-container {
   background-color: rgba(255, 255, 255, 0.1);
+  width: 90%;
   max-width: 500px;
   border-radius: 5px;
   padding: 1.25rem;
@@ -76,55 +91,35 @@ body {
 }
 
 .start-btn {
-  margin-left: 1rem;
+  margin: 1rem;
 }
 
-p {
+.container p {
   margin: 0.5rem;
 }
 
-
-
 select,
-input[type='text'] {
-  width: 200px;
+input[type="text"] {
+  width: 100%;
+  max-width: 300px;
   border: 0;
   border-radius: 5px;
-  padding: 0.25rem;
+  padding: 0.25rem 0.5rem;
   appearance: none;
   background-color: var(--primary-input);
   color: var(--primary);
 }
 
-input[type='text'] {
+input[type="text"] {
   padding: 0.75rem 1.25rem;
-  width: 300px;
   margin-top: 0.625rem;
 }
 
 select:focus,
 button:focus,
-input[type='text']:focus {
+input[type="text"]:focus {
   outline: none;
   box-shadow: 0 0 0 1px var(--primary), 0 0 0 2px var(--primary-text);
-}
-
-.settings {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.4);
-  height: 4rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(0);
-  transition: transform 0.4s ease-in-out;
-}
-
-.settings.hide {
-  transform: translateY(-100%);
 }
 
 .scoreboard {
@@ -154,4 +149,16 @@ input[type='text']:focus {
 
 .warning {
   color: var(--warning);
+}
+
+@media (max-width: 625px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 350px) {
+  :root {
+    font-size: 10px;
+  }
 }
