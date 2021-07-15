@@ -203,7 +203,7 @@ const themes = {
   default: {
     text: '#dadff7',
     primary: '#98718c',
-    secondary: '#dadff7',
+    secondary: '#F8B4C0',
     point: '#553e4e',
   },
   nord: {
