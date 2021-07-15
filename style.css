@@ -5,7 +5,7 @@
   margin: 0;
 }
 
-.default {
+:root {
   --primary: #553e4e;
   --secondary: #98718c;
   --primary-text: #dadff7;
@@ -199,6 +199,41 @@ option {
   :root {
     font-size: 10px;
   }
+}
+
+.default {
+  --primary: #553e4e;
+  --secondary: #98718c;
+  --primary-text: #dadff7;
+  --primary-input: #ced4f3;
+  --warning: #f6ae2d;
+  --success: #8db580;
+}
+
+.indigo-khaki {
+  --primary: #153b50;
+  --secondary: #1a4861;
+  --primary-text: #cfb9a5;
+  --success: #d9b726;
+  --warning: #a5392a;
+}
+
+.independent-coral {
+  --primary: #323848;
+  --secondary: #495B55;
+  --primary-text: #a2c3a4;
+  --primary-input: #ed9390;
+  --success: #c4f1be;
+  --warning: #ed9390;
+}
+
+.vinyard {
+  --primary: #423856;
+  --secondary: #726194;
+  --primary-text: #babaf3;
+  --primary-input: #d1efd4;
+  --success: #c4ebc8;
+  --warning: #ee6c4d;
 }
 
 .nord {
