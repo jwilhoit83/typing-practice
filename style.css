@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 * {
   box-sizing: border-box;
   margin: 0;
 }
 
-:root {
+.default {
   --primary: #553e4e;
   --secondary: #98718c;
   --primary-text: #dadff7;
@@ -15,13 +15,14 @@
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--primary);
   color: var(--primary-text);
   min-height: 100vh;
 }
 
-.settings {
+.settings,
+.footer {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   height: 4rem;
@@ -35,6 +36,14 @@ body {
 
 .settings.hide {
   opacity: 0;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  margin: 0;
 }
 
 .flex {
@@ -71,6 +80,7 @@ body {
 
 .stats p {
   font-size: 0.75rem;
+  padding: 0.5rem 0 0;
 }
 
 .btn {
@@ -84,10 +94,7 @@ body {
 }
 
 .settings-btn {
-  position: absolute;
   padding: 0.5rem 0.75rem;
-  bottom: 2rem;
-  left: 2rem;
 }
 
 .start-btn {
@@ -98,28 +105,59 @@ body {
   margin: 0.5rem;
 }
 
-select,
-input[type="text"] {
+.duration-select,
+.theme-select,
+.text-input {
   width: 100%;
   max-width: 300px;
-  border: 0;
+  border: 1px solid var(--primary-input);
   border-radius: 5px;
   padding: 0.25rem 0.5rem;
   appearance: none;
-  background-color: var(--primary-input);
-  color: var(--primary);
+  background-color: transparent;
+  color: var(--primary-input);
 }
 
-input[type="text"] {
+option {
+  background-color: var(--primary);
+}
+
+.text-input {
   padding: 0.75rem 1.25rem;
   margin-top: 0.625rem;
 }
 
-select:focus,
-button:focus,
-input[type="text"]:focus {
+::-webkit-input-placeholder {
+  color: var(--primary-input);
+  opacity: 0.7;
+}
+:-moz-placeholder {
+  color: var(--primary-input);
+  opacity: 0.7;
+}
+::-moz-placeholder {
+  color: var(--primary-input);
+  opacity: 0.7;
+}
+:-ms-input-placeholder {
+  color: var(--primary-input);
+  opacity: 0.7;
+}
+::-ms-input-placeholder {
+  color: var(--primary-input);
+  opacity: 0.7;
+}
+
+.duration-select:focus,
+.theme-select:focus,
+.text-input:focus {
   outline: none;
-  box-shadow: 0 0 0 1px var(--primary), 0 0 0 2px var(--primary-text);
+  box-shadow: 0 0 0 2px var(--secondary), 0 0 0 3px var(--primary-input);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--secondary), 0 0 0 3px var(--primary-text);
 }
 
 .scoreboard {
@@ -161,4 +199,22 @@ input[type="text"]:focus {
   :root {
     font-size: 10px;
   }
+}
+
+.nord {
+  --primary: #2e3140;
+  --secondary: #484f62;
+  --primary-text: #7d92a3;
+  --primary-input: #e0b1df;
+  --success: #7a9d7f;
+  --warning: #bd5d6b;
+}
+
+.solarized-dark {
+  --primary: #00232c;
+  --secondary: #114952;
+  --primary-text: #268985;
+  --primary-input: #3787c4;
+  --success: #d9b726;
+  --warning: #a5392a;
 }

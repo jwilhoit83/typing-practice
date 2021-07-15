@@ -1,16 +1,17 @@
-const word = document.getElementById("word");
-const text = document.getElementById("text");
-const scoreEl = document.getElementById("score");
-const timeEl = document.getElementById("time");
-const endgameEl = document.getElementById("end-game-container");
-const wpm = document.getElementById("wpm");
-const accuracy = document.getElementById("accuracy");
-const resetBtn = document.getElementById("reset");
-const startBtn = document.getElementById("start-btn");
-const settingsBtn = document.getElementById("settings-btn");
-const settings = document.getElementById("settings");
-const settingsForm = document.getElementById("settings-form");
-const durationSelect = document.getElementById("duration");
+const word = document.getElementById('word')
+const text = document.getElementById('text')
+const scoreEl = document.getElementById('score')
+const timeEl = document.getElementById('time')
+const endgameEl = document.getElementById('end-game-container')
+const wpm = document.getElementById('wpm')
+const accuracy = document.getElementById('accuracy')
+const resetBtn = document.getElementById('reset')
+const startBtn = document.getElementById('start-btn')
+const settingsBtn = document.getElementById('settings-btn')
+const settings = document.getElementById('settings')
+const settingsForm = document.getElementById('settings-form')
+const durationSelect = document.getElementById('duration')
+const themeSelect = document.getElementById('theme')
 
 // stats elements
 const avgWPM = document.getElementById('avg-wpm')
@@ -20,182 +21,220 @@ const avgAcc = document.getElementById('avg-acc')
 const maxAcc = document.getElementById('max-acc')
 const minAcc = document.getElementById('min-acc')
 
-const wordList =
-  "the of to and a in is it you that he was for on are with as I his they be at one have this from or had by hot but some what there we can out other were all your when up use word how said an each she which do their time if will way about many then them would write like so these her long make thing see him two has look more day could go come did my sound no most number who over know water than call first people may down side been now find any new work part take get place made live where after back little only round man year came show every good me give our under name very through just form much great think say help low line before turn cause same mean differ move right boy old too does tell sentence set three want air well also play small end put home read hand port large spell add even land here must big high such follow act why ask men change went light kind off need house picture try us again animal point mother world near build self earth father head stand own page should country found answer school grow study still learn plant cover food sun four thought let keep eye never last door between city tree cross since hard start might story saw far sea draw left late run while press close night real life few stop open seem together next white children begin got walk example ease paper often always music those both mark book letter until mile river car feet care second group carry took rain eat room friend began idea fish mountain north once base hear horse cut sure watch color face wood main enough plain girl usual young ready above ever red list though feel talk bird soon body dog family direct pose leave song measure state product black short numeral class wind question happen complete ship area half rock order fire south problem piece told knew pass farm top whole king size heard best hour better true during hundred am remember step early hold west ground interest reach fast five sing listen six table travel less morning ten simple several vowel toward war lay against pattern slow center love person money serve appear road map science rule govern pull cold notice voice fall power town fine certain fly unit lead cry dark machine note wait plan figure star box noun field rest correct able pound done beauty drive stood contain front teach week final gave green oh quick develop sleep warm free minute strong special mind behind clear tail produce fact street inch lot nothing course stay wheel full force blue object decide surface deep moon island foot yet busy test record boat common gold possible plane age dry wonder laugh thousand ago ran check game shape yes hot miss brought heat snow bed bring sit perhaps fill east weight language among".split(
-    " "
-  );
+//set the color theme from local storage
+document.documentElement.classList = localStorage.getItem('prevTheme')
+  ? localStorage.getItem('prevTheme')
+  : 'default'
 
-let randomWords;
-let charCount;
-let correctCount;
-let score;
-let time;
-let timeInterval;
-let index;
-let scoresArr = localStorage.getItem("scores") ? JSON.parse(localStorage.getItem("scores")) : [];
-let wpmArr = scoresArr.map((item) => item.score);
-let accuracyArr = scoresArr.map((item) => item.accuracy);
+const wordList =
+  'the of to and a in is it you that he was for on are with as I his they be at one have this from or had by hot but some what there we can out other were all your when up use word how said an each she which do their time if will way about many then them would write like so these her long make thing see him two has look more day could go come did my sound no most number who over know water than call first people may down side been now find any new work part take get place made live where after back little only round man year came show every good me give our under name very through just form much great think say help low line before turn cause same mean differ move right boy old too does tell sentence set three want air well also play small end put home read hand port large spell add even land here must big high such follow act why ask men change went light kind off need house picture try us again animal point mother world near build self earth father head stand own page should country found answer school grow study still learn plant cover food sun four thought let keep eye never last door between city tree cross since hard start might story saw far sea draw left late run while press close night real life few stop open seem together next white children begin got walk example ease paper often always music those both mark book letter until mile river car feet care second group carry took rain eat room friend began idea fish mountain north once base hear horse cut sure watch color face wood main enough plain girl usual young ready above ever red list though feel talk bird soon body dog family direct pose leave song measure state product black short numeral class wind question happen complete ship area half rock order fire south problem piece told knew pass farm top whole king size heard best hour better true during hundred am remember step early hold west ground interest reach fast five sing listen six table travel less morning ten simple several vowel toward war lay against pattern slow center love person money serve appear road map science rule govern pull cold notice voice fall power town fine certain fly unit lead cry dark machine note wait plan figure star box noun field rest correct able pound done beauty drive stood contain front teach week final gave green oh quick develop sleep warm free minute strong special mind behind clear tail produce fact street inch lot nothing course stay wheel full force blue object decide surface deep moon island foot yet busy test record boat common gold possible plane age dry wonder laugh thousand ago ran check game shape yes hot miss brought heat snow bed bring sit perhaps fill east weight language among'.split(
+    ' '
+  )
+
+let randomWords
+let charCount
+let correctCount
+let score
+let time
+let timeInterval
+let index
+let scoresArr = localStorage.getItem('scores') ? JSON.parse(localStorage.getItem('scores')) : []
+let wpmArr = scoresArr.map(item => item.score)
+let accuracyArr = scoresArr.map(item => item.accuracy)
 
 // start the game, resetting counters, score, and index as well as randomizing the word list for each round.
 function startRound() {
-  text.focus();
-  settings.classList.add("hide");
-  index = 0;
-  charCount = 0;
-  correctCount = 0;
-  score = 0;
-  randomWords = Array.from({ length: wordList.length }, () => wordList[Math.floor(Math.random() * wordList.length)] + " ");
+  text.focus()
+  settings.classList.add('hide')
+  index = 0
+  charCount = 0
+  correctCount = 0
+  score = 0
+  randomWords = Array.from(
+    { length: wordList.length },
+    () => wordList[Math.floor(Math.random() * wordList.length)] + ' '
+  )
 
-  text.addEventListener("input", textListener);
+  text.addEventListener('input', textListener)
 
   setTimeout(() => {
-    addWordToDOM(index);
-    time = durationSelect.value;
-    timeEl.innerText = time + "s";
-    timeInterval = setInterval(updateTime, 1000);
-  }, 1000);
+    addWordToDOM(index)
+    time = durationSelect.value
+    timeEl.innerText = time + 's'
+    timeInterval = setInterval(updateTime, 1000)
+  }, 1000)
 }
 
 function addWordToDOM(i) {
   word.innerHTML = randomWords
     .slice(i, i + 4)
-    .map((word) =>
+    .map(word =>
       word
-        .split("")
-        .map((letter) => `<span class='letter'>${letter}</span>`)
-        .join("")
+        .split('')
+        .map(letter => `<span class='letter'>${letter}</span>`)
+        .join('')
     )
-    .join("");
+    .join('')
 }
 
 function updateTime() {
-  time--;
-  timeEl.innerText = time + "s";
+  time--
+  timeEl.innerText = time + 's'
 
   if (time <= 5) {
-    timeEl.classList.add("warning");
+    timeEl.classList.add('warning')
   }
 
   if (time <= 0) {
-    clearInterval(timeInterval);
-    roundOver();
-    timeEl.className = "";
+    clearInterval(timeInterval)
+    roundOver()
+    timeEl.className = ''
   }
 }
 
 function updateScore() {
-  score = ((charCount / 5 / (durationSelect.value - time)) * 60).toFixed(0);
-  scoreEl.innerText = score;
+  score = ((charCount / 5 / (durationSelect.value - time)) * 60).toFixed(0)
+  scoreEl.innerText = score
 }
 
 function roundOver() {
-  text.removeEventListener("input", textListener);
-  checkPartialWord();
-  updateScore();
-  progressChart.update();
-  text.value = "";
+  text.removeEventListener('input', textListener)
+  checkPartialWord()
+  updateScore()
+  progressChart.update()
+  text.value = ''
 
   // updating data for previous score chart
-  scoresArr.push({ score, accuracy: ((correctCount / charCount) * 100).toFixed(0) });
-  localStorage.setItem("scores", JSON.stringify(scoresArr));
-  wpmArr = scoresArr.map((item) => item.score);
-  accuracyArr = scoresArr.map((item) => item.accuracy);
-  progressChart.update();
+  scoresArr.push({ score, accuracy: ((correctCount / charCount) * 100).toFixed(0) })
+  localStorage.setItem('scores', JSON.stringify(scoresArr))
+  wpmArr = scoresArr.map(item => item.score)
+  accuracyArr = scoresArr.map(item => item.accuracy)
+  progressChart.update()
 
-  wpm.innerText = score;
-  accuracy.innerText = ((correctCount / charCount) * 100).toFixed(0) + "%";
-  endgameEl.style.display = "flex";
+  wpm.innerText = score
+  accuracy.innerText = ((correctCount / charCount) * 100).toFixed(0) + '%'
+  endgameEl.style.display = 'flex'
 }
 
 function reset() {
-  endgameEl.style.display = "none";
-  text.value = "";
-  word.innerText = String.fromCharCode(160);
+  endgameEl.style.display = 'none'
+  text.value = ''
+  word.innerText = String.fromCharCode(160)
 }
 
 function checkPartialWord() {
-  const insertedText = text.value;
+  const insertedText = text.value
   if (insertedText > 0) {
-    let length = insertedText.length >= randomWords[index].length ? randomWords[index].length : insertedText.length;
-    charCount += length;
-    if (insertedText.length > length) correctCount -= insertedText.length - length;
+    let length =
+      insertedText.length >= randomWords[index].length
+        ? randomWords[index].length
+        : insertedText.length
+    charCount += length
+    if (insertedText.length > length) correctCount -= insertedText.length - length
     for (let i = 0; i < length; i++) {
       if (insertedText[i] === randomWords[index][i]) {
-        correctCount++;
+        correctCount++
       }
     }
   }
 }
 
 function textListener() {
-  const insertedText = text.value;
-  const letterArray = [...document.querySelectorAll(".letter")];
+  const insertedText = text.value
+  const letterArray = [...document.querySelectorAll('.letter')]
 
   if (insertedText.length <= randomWords[index].length) {
     for (let i = 0; i < insertedText.length; i++) {
       if (insertedText[i] === randomWords[index][i]) {
-        letterArray[i].classList.add("success");
+        letterArray[i].classList.add('success')
       } else {
-        letterArray[i].classList.add("warning");
-        correctCount--;
+        letterArray[i].classList.add('warning')
+        correctCount--
       }
     }
   }
 
-  letterArray.slice(insertedText.length).forEach((letter) => (letter.className = "letter"));
+  letterArray.slice(insertedText.length).forEach(letter => (letter.className = 'letter'))
 
   if (insertedText === randomWords[index]) {
-    charCount += randomWords[index].length;
-    correctCount += randomWords[index].length;
-    index++;
-    addWordToDOM(index);
-    updateScore();
-    text.value = "";
-  } else if (insertedText.slice(1).includes(" ")) {
-    checkPartialWord();
-    index++;
-    addWordToDOM(index);
-    updateScore();
-    text.value = "";
+    charCount += randomWords[index].length
+    correctCount += randomWords[index].length
+    index++
+    addWordToDOM(index)
+    updateScore()
+    text.value = ''
+  } else if (insertedText.slice(1).includes(' ')) {
+    checkPartialWord()
+    index++
+    addWordToDOM(index)
+    updateScore()
+    text.value = ''
   }
 }
 
 // event listeners
 
-startBtn.addEventListener("click", startRound);
+startBtn.addEventListener('click', startRound)
 
-settingsBtn.addEventListener("click", () => {
-  settings.classList.toggle("hide");
-});
+settingsBtn.addEventListener('click', () => {
+  settings.classList.toggle('hide')
+})
 
-resetBtn.addEventListener("click", reset);
+resetBtn.addEventListener('click', reset)
+
+themeSelect.addEventListener('change', e => {
+  document.documentElement.className = e.target.value
+  localStorage.setItem('prevTheme', e.target.value)
+})
 
 // chart for past scores
 
-const chart = document.getElementById("score-chart");
-let labels = [];
-for (let i = 1; i <= scoresArr.length; i++) labels.push(i);
+const chart = document.getElementById('score-chart')
+let labels = []
+for (let i = 1; i <= scoresArr.length; i++) labels.push(i)
 
-Chart.defaults.color = "#dadff7";
+const themes = {
+  default: {
+    text: '#dadff7',
+    primary: '#98718c',
+    secondary: '#dadff7',
+    point: '#553e4e'
+  },
+  nord: {
+    text: '#7d92a3',
+    primary: '#eecd9a',
+    secondary: '#79b6d3',
+    point: '#2e3140'
+  },
+  'solarized-dark': {
+    text: '#268985',
+    primary: '#7b519d',
+    secondary: '#d9b726',
+    point: '#00232c'
+  },
+}
+let theme = document.documentElement.className
+
+Chart.defaults.color = themes[document.documentElement.className].text
 let progressChart = new Chart(chart, {
-  type: "line",
+  type: 'line',
   data: {
     labels: labels,
     datasets: [
       {
-        label: "WPM",
+        label: 'WPM',
         data: wpmArr,
-        borderColor: "#dadff7",
+        borderColor: themes[document.documentElement.className].primary,
         borderWidth: 1,
-        pointBackgroundColor: "#98718c",
+        pointBackgroundColor: themes[document.documentElement.className].point,
         tension: 0.3,
       },
       {
-        label: "Accuracy",
+        label: 'Accuracy',
         data: accuracyArr,
-        borderColor: "#98718c",
+        borderColor: themes[document.documentElement.className].secondary,
         borderWidth: 1,
-        pointBackgroundColor: "#dadff7",
+        pointBackgroundColor: themes[document.documentElement.className].point,
         tension: 0.3,
       },
     ],
@@ -204,7 +243,7 @@ let progressChart = new Chart(chart, {
     plugins: {
       title: {
         display: true,
-        text: "Past Scores On This Machine",
+        text: 'Past Scores On This Machine',
       },
     },
     scales: {
@@ -213,11 +252,13 @@ let progressChart = new Chart(chart, {
       },
     },
   },
-});
+})
 
-avgWPM.innerText = (wpmArr.map(Number).reduce((a,c) => a += c) / wpmArr.length).toFixed(0)
+avgWPM.innerText = (wpmArr.map(Number).reduce((a, c) => (a += c)) / wpmArr.length).toFixed(0)
 maxWPM.innerText = wpmArr.slice().sort((a, b) => b - a)[0]
 minWPM.innerText = wpmArr.slice().sort((a, b) => a - b)[0]
-avgAcc.innerText = (accuracyArr.map(Number).reduce((a,c) => a += c) / accuracyArr.length).toFixed(0)
+avgAcc.innerText = (
+  accuracyArr.map(Number).reduce((a, c) => (a += c)) / accuracyArr.length
+).toFixed(0)
 maxAcc.innerText = accuracyArr.slice().sort((a, b) => b - a)[0]
 minAcc.innerText = accuracyArr.slice().sort((a, b) => a - b)[0]

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class='default'>
 
 <head>
     <meta charset="UTF-8">
@@ -16,12 +16,12 @@
     <div id="settings" class="settings">
         <h3>Typing Practice</h3>
         <form id="settings-form">
-                <select id="duration">
-                    <option value=30 selected disabled>Select Duration</option>
-                    <option value=30>Short</option>
-                    <option value=60>Medium</option>
-                    <option value=120>Long</option>
-                </select>
+            <select id="duration" class='duration-select'>
+                <option value=30 selected disabled>Select Duration</option>
+                <option value=30>Short</option>
+                <option value=60>Medium</option>
+                <option value=120>Long</option>
+            </select>
         </form>
     </div>
     <div class="flex">
@@ -40,7 +40,7 @@
 
             <h2 id="word">&nbsp</h2>
 
-            <input type="text" id="text" autocomplete="off" placeholder='Type the words here...'>
+            <input type="text" id="text" autocomplete="off" placeholder='Type the words here...' class='text-input'>
 
             <button id="start-btn" class="btn start-btn">
                 Start Timer
@@ -69,11 +69,22 @@
             </div>
         </div>
     </div>
-    <button id="settings-btn" class="btn settings-btn">
-        <span class="material-icons-outlined">
-            settings
-        </span>
-    </button>
+    <div class="footer">
+        <button id="settings-btn" class="btn settings-btn">
+            <span class="material-icons-outlined">
+                settings
+            </span>
+        </button>
+        <form id="theme-form">
+            <select id="theme" class='theme-select'>
+                <option value='default' selected disabled>Theme</option>
+                <option value='default'>Default</option>
+                <option value='nord'>Nord</option>
+                <option value='solarized-dark'>Solarized Dark</option>
+            </select>
+        </form>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
     <script src="script.js"></script>
 </body>
