@@ -205,9 +205,13 @@ option {
   --primary: #553e4e;
   --secondary: #98718c;
   --primary-text: #dadff7;
-  --primary-input: #F8B4C0;
+  --primary-input: #f8b4c0;
   --warning: #f6ae2d;
   --success: #8db580;
+  --chart-text: #dadff7;
+  --chart-primary: #98718c;
+  --chart-secondary: #f8b4c0;
+  --chart-point: #553e4e;
 }
 
 .indigo-khaki {
@@ -216,15 +220,23 @@ option {
   --primary-text: #cfb9a5;
   --success: #d9b726;
   --warning: #a5392a;
+  --chart-text: #cfb9a5;
+  --chart-primary: #dab6fc;
+  --chart-secondary: #ca7df9;
+  --chart-point: #153b50;
 }
 
 .independent-coral {
   --primary: #323848;
-  --secondary: #495B55;
+  --secondary: #495b55;
   --primary-text: #a2c3a4;
   --primary-input: #ed9390;
   --success: #c4f1be;
   --warning: #ed9390;
+  --chart-text: #a2c3a4;
+  --chart-primary: #ed9390;
+  --chart-secondary: #c4f1be;
+  --chart-point: #495b55;
 }
 
 .vinyard {
@@ -234,6 +246,10 @@ option {
   --primary-input: #d1efd4;
   --success: #c4ebc8;
   --warning: #ee6c4d;
+  --chart-text: #babaf3;
+  --chart-primary: #c4ebc8;
+  --chart-secondary: #726194;
+  --chart-point: #423856;
 }
 
 .nord {
@@ -243,6 +259,10 @@ option {
   --primary-input: #e0b1df;
   --success: #7a9d7f;
   --warning: #bd5d6b;
+  --chart-text: #7d92a3;
+  --chart-primary: #eecd9a;
+  --chart-secondary: #79b6d3;
+  --chart-point: #2e3140;
 }
 
 .solarized-dark {
@@ -252,4 +272,8 @@ option {
   --primary-input: #3787c4;
   --success: #d9b726;
   --warning: #a5392a;
+  --chart-text: #268985;
+  --chart-primary: #7b519d;
+  --chart-secondary: #d9b726;
+  --chart-point: #00232c;
 }
