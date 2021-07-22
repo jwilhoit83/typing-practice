@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Roboto&family=Ubuntu&family=Ubuntu+Condensed&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,22 +6,23 @@
 }
 
 :root {
-  --primary: #553e4e;
-  --secondary: #98718c;
-  --primary-text: #dadff7;
-  --warning: #f6ae2d;
-  --success: #8db580;
-  --primary-input: #ced4f3;
+  --primary: hsl(318, 16%, 29%);
+  --secondary: hsl(318, 16%, 52%);
+  --primary-text: hsl(230, 64%, 91%);
+  --warning: hsl(39, 92%, 57%);
+  --success: hsl(105, 26%, 61%);
+  --primary-input: hsl(230, 61%, 88%);
+  --container-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   background-color: var(--primary);
   color: var(--primary-text);
   min-height: 100vh;
 }
 
-.settings,
+.header,
 .footer {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
@@ -34,8 +35,12 @@ body {
   justify-content: space-between;
 }
 
-.settings.hide {
+.header.hide {
   opacity: 0;
+}
+
+.header h2 {
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 .footer {
@@ -62,6 +67,7 @@ body {
   text-align: center;
   width: 90%;
   max-width: 500px;
+  box-shadow: var(--container-shadow);
 }
 
 .chart-container {
@@ -70,6 +76,7 @@ body {
   max-width: 500px;
   border-radius: 5px;
   padding: 1.25rem;
+  box-shadow: var(--container-shadow);
 }
 
 .stats {
@@ -90,7 +97,7 @@ body {
   font-weight: 700;
   border-radius: 5px;
   padding: 0.75rem 1.25rem;
-  border: 1px solid var(--primary-text);
+  border: 1.5px solid var(--primary-text);
 }
 
 .settings-btn {
@@ -110,7 +117,7 @@ body {
 .text-input {
   width: 100%;
   max-width: 300px;
-  border: 1px solid var(--primary-input);
+  border: 1.5px solid var(--primary-input);
   border-radius: 5px;
   padding: 0.25rem 0.5rem;
   appearance: none;
@@ -152,12 +159,13 @@ option {
 .theme-select:focus,
 .text-input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--secondary), 0 0 0 3px var(--primary-input);
+  box-shadow: 0 0 0 1.5px var(--secondary), 0 0 0 3px var(--primary-input);
 }
 
-.btn:focus {
+.btn:focus,
+.btn:active {
   outline: none;
-  box-shadow: 0 0 0 2px var(--secondary), 0 0 0 3px var(--primary-text);
+  box-shadow: 0 0 0 1.5px var(--secondary), 0 0 0 3px var(--primary-text);
 }
 
 .scoreboard {
@@ -189,6 +197,35 @@ option {
   color: var(--warning);
 }
 
+.word {
+  font-family: 'Ubuntu Condensed', sans-serif;
+  font-size: 2rem;
+}
+
+/* .cursor {
+  position: relative;
+}
+
+.cursor::after {
+  content: '|';
+  position: absolute;
+  right: -5px;
+  color: var(--primary-input);
+  animation: 0.75s cursor ease infinite;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
 @media (max-width: 625px) {
   :root {
     font-size: 12px;
@@ -201,7 +238,18 @@ option {
   }
 }
 
-.default {
+.light-side .header,
+.light-side .chart-container {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.light-side .end-game-container,
+.light-side .end-game-container .btn {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.two-buck-chuck {
   --primary: #553e4e;
   --secondary: #98718c;
   --primary-text: #dadff7;
@@ -212,6 +260,19 @@ option {
   --chart-primary: #98718c;
   --chart-secondary: #f8b4c0;
   --chart-point: #553e4e;
+}
+
+.light-side {
+  --primary: #d8e2dc;
+  --secondary: #ffe5d9;
+  --primary-text: #735960;
+  --primary-input: #6e876e;
+  --success: #849a84;
+  --warning: #ec6f81;
+  --chart-text: #735960;
+  --chart-primary: #d8e2dc;
+  --chart-secondary: #ffe5d9;
+  --chart-point: #6e876e;
 }
 
 .indigo-khaki {
