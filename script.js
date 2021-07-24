@@ -1,3 +1,4 @@
+const testContainer = document.getElementById('test-container')
 const word = document.getElementById('word')
 const text = document.getElementById('text')
 const scoreEl = document.getElementById('score')
@@ -45,6 +46,7 @@ let timeInterval
 let index
 let progressChart
 let scoresArr = localStorage.getItem('scores') ? JSON.parse(localStorage.getItem('scores')) : []
+let dateArr = scoresArr.map(item => item.date)
 let wpmArr = scoresArr.map(item => item.score)
 let accuracyArr = scoresArr.map(item => item.accuracy)
 
@@ -65,12 +67,16 @@ function startRound() {
 
   text.addEventListener('input', textListener)
 
+  startBtn.classList.add('no-click')
+  testContainer.classList.add('start')
+
   setTimeout(() => {
+    testContainer.classList.remove('start')
     addWordToDOM(index)
     time = durationSelect.value
     timeEl.innerText = time + 's'
     timeInterval = setInterval(updateTime, 1000)
-  }, 1500)
+  }, 3000)
 }
 
 function addWordToDOM(i) {
@@ -102,7 +108,7 @@ function updateTime() {
 
 function updateScore() {
   score = ((charCount / 5 / (durationSelect.value - time)) * 60).toFixed(0)
-  scoreEl.innerText = score  
+  scoreEl.innerText = score
 }
 
 function roundOver() {
@@ -115,6 +121,8 @@ function roundOver() {
   wpm.innerText = score
   accuracy.innerText = ((correctCount / charCount) * 100).toFixed(0) + '%'
   endgameEl.style.display = 'flex'
+  settings.classList.remove('hide')
+  startBtn.classList.remove('no-click')
 }
 
 function reset() {
@@ -153,7 +161,7 @@ function createChart() {
   progressChart = new Chart(chart, {
     type: 'line',
     data: {
-      labels: labels,
+      labels: dateArr,
       datasets: [
         {
           label: 'WPM',
@@ -198,8 +206,13 @@ function createChart() {
 }
 
 function updateData() {
-  scoresArr.push({ score, accuracy: ((correctCount / charCount) * 100).toFixed(0) })
+  scoresArr.push({
+    date: new Date(Date.now()).toDateString(),
+    score,
+    accuracy: ((correctCount / charCount) * 100).toFixed(0),
+  })
   localStorage.setItem('scores', JSON.stringify(scoresArr))
+  dateArr = scoresArr.map(item => item.date)
   wpmArr = scoresArr.map(item => item.score)
   accuracyArr = scoresArr.map(item => item.accuracy)
 
@@ -209,12 +222,16 @@ function updateData() {
 }
 
 function updateStats() {
-  avgWPM.innerText = wpmArr.length > 0 ? (wpmArr.map(Number).reduce((a, c) => (a += c)) / wpmArr.length).toFixed(0) : 0
+  avgWPM.innerText =
+    wpmArr.length > 0
+      ? (wpmArr.map(Number).reduce((a, c) => (a += c)) / wpmArr.length).toFixed(0)
+      : 0
   maxWPM.innerText = wpmArr.length > 0 ? wpmArr.slice().sort((a, b) => b - a)[0] : 0
   minWPM.innerText = wpmArr.length > 0 ? wpmArr.slice().sort((a, b) => a - b)[0] : 0
-  avgAcc.innerText = accuracyArr.length > 0 ? (
-    accuracyArr.map(Number).reduce((a, c) => (a += c)) / accuracyArr.length
-  ).toFixed(0) : 0
+  avgAcc.innerText =
+    accuracyArr.length > 0
+      ? (accuracyArr.map(Number).reduce((a, c) => (a += c)) / accuracyArr.length).toFixed(0)
+      : 0
   maxAcc.innerText = accuracyArr.length > 0 ? accuracyArr.slice().sort((a, b) => b - a)[0] : 0
   minAcc.innerText = accuracyArr.length > 0 ? accuracyArr.slice().sort((a, b) => a - b)[0] : 0
 }
