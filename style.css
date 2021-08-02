@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Ubuntu+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
 
 * {
   box-sizing: border-box;
@@ -13,10 +13,12 @@
   --success: hsl(105, 26%, 61%);
   --primary-input: hsl(230, 61%, 88%);
   --container-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  --bg-overlay: rgba(255, 255, 255, 0.1);
+  --end-game-btn: var(--primary-text);
 }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--primary);
   color: var(--primary-text);
   min-height: 100vh;
@@ -25,7 +27,7 @@ body {
 .header,
 .footer {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--bg-overlay);
   height: 4rem;
   transition: opacity 0.4s ease-in-out;
   margin-bottom: 4rem;
@@ -37,10 +39,6 @@ body {
 
 .header.hide {
   opacity: 0;
-}
-
-.header h2 {
-  font-family: 'Ubuntu', sans-serif;
 }
 
 .footer {
@@ -96,10 +94,10 @@ body {
 
 @keyframes countdown {
   0% {
-    content: '3';    
+    content: '3';
   }
   33% {
-    content: '2';    
+    content: '2';
   }
   66.6% {
     content: '1';
@@ -111,7 +109,7 @@ body {
 }
 
 .chart-container {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--bg-overlay);
   width: 90%;
   max-width: 500px;
   border-radius: 5px;
@@ -207,13 +205,13 @@ option {
 .theme-select:focus,
 .text-input:focus {
   outline: none;
-  box-shadow: 0 0 0 1.5px var(--secondary), 0 0 0 3px var(--primary-input);
+  box-shadow: 0 0 0 1px var(--secondary), 0 0 2px 2px var(--primary-input);
 }
 
 .btn:focus,
 .btn:active {
   outline: none;
-  box-shadow: 0 0 0 1.5px var(--secondary), 0 0 0 3px var(--primary-text);
+  box-shadow: 0 0 0 1px var(--secondary), 0 0 2px 2px var(--primary-text);
 }
 
 .scoreboard {
@@ -224,6 +222,7 @@ option {
 
 .end-game-container {
   background-color: rgba(0, 0, 0, 0.8);
+  color: var(--end-game-btn);
   border-radius: 5px;
   display: none;
   align-items: center;
@@ -237,6 +236,11 @@ option {
   z-index: 1;
 }
 
+.end-game-container .btn {
+  color: var(--end-game-btn);
+  border-color: var(--end-game-btn);
+}
+
 .success {
   color: var(--success);
 }
@@ -245,34 +249,14 @@ option {
   color: var(--warning);
 }
 
+.test-container h3 {
+  margin-block: 1rem;
+}
+
 .word {
-  font-family: 'Ubuntu Condensed', sans-serif;
-  font-size: 2rem;
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 1.5rem;
 }
-
-/* .cursor {
-  position: relative;
-}
-
-.cursor::after {
-  content: '|';
-  position: absolute;
-  right: -5px;
-  color: var(--primary-input);
-  animation: 0.75s cursor ease infinite;
-}
-
-@keyframes cursor {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
 
 @media (max-width: 625px) {
   :root {
@@ -284,17 +268,6 @@ option {
   :root {
     font-size: 10px;
   }
-}
-
-.light-side .header,
-.light-side .chart-container {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.light-side .end-game-container,
-.light-side .end-game-container .btn {
-  color: var(--primary);
-  border-color: var(--primary);
 }
 
 .two-buck-chuck {
@@ -319,8 +292,10 @@ option {
   --warning: #ec6f81;
   --chart-text: #735960;
   --chart-primary: #f0f4f2;
-  --chart-secondary: hsl(38, 86%, 81%);
+  --chart-secondary: #f8daa5;
   --chart-point: #6e876e;
+  --bg-overlay: rgba(0, 0, 0, 0.2);
+  --end-game-btn: var(--primary);
 }
 
 .indigo-khaki {

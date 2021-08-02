@@ -1,0 +1,19 @@
+{
+  "name": "typing-game",
+  "version": "1.0.0",
+  "description": "This project started out as a simple typing game that was part of a Udemy course by Brad Traversy but i enjoyed it and expanded some of the functionality and implemented the words per minute algoritm.  \r The design has gotten a bit of a makeover from the original and different theme options for the app have been added.  \r The chart.js chart for previous scores is another addition to Brad's design and has been nice to throw in some accent colors in there to add to the color themes.  \r It is still a work in progress but I am enjoying it so far.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jwilhoit83/typing-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwilhoit83/typing-practice/issues"
+  },
+  "homepage": "https://github.com/jwilhoit83/typing-practice#readme"
+}
