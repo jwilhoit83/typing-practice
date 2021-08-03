@@ -9,11 +9,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="themes.css">
     <title>TypDev 1.0</title>
 </head>
 
 <body>
-    <header id="settings" class="header">        
+    <header id="settings" class="header">
         <h3>TypeDev 1.0</h3>
         <form id="settings-form">
             <select id="duration" class='duration-select'>
@@ -30,30 +31,24 @@
                 <p class="time-container">
                     Time left: <span id="time"></span>
                 </p>
-
                 <p class="score-container">
                     WPM: <span id="score">0</span>
                 </p>
             </div>
-
             <h3>Type the following:</h3>
-
             <h2 id="word" class='word'>&nbsp</h2>
-
             <input type="text" id="text" autocomplete="off" placeholder='Type the words here...' class='text-input'>
-
             <button id="start-btn" class="btn start-btn">
                 Start Timer
             </button>
-
             <div id="end-game-container" class="end-game-container">
-                <h1>Time ran out</h1>
-                <p>Your final score is <span id='wpm'></span> words per minute</p>
-                <p>Accuracy: <span id='accuracy'></span></p>
+                <h1>Test Results</h1>
+                <div>
+                    <p>Words Per Minute: <span id='wpm'></span></p>
+                    <p>Accuracy: <span id='accuracy'></span></p>
+                </div>
                 <button id='reset' class='btn'>Try Again</button>
             </div>
-
-
         </div>
         <div class="chart-container">
             <canvas id="score-chart" width="500" height="300"></canvas>

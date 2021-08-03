@@ -1,0 +1,93 @@
+.two-buck-chuck {
+    --primary: #553e4e;
+    --secondary: #98718c;
+    --primary-text: #eaedfa;
+    --primary-input: #f6a2b1;
+    --warning: #f6ae2d;
+    --success: #8db580;
+    --chart-text: #dadff7;
+    --chart-primary: #f7f7ee;
+    --chart-secondary: #c99cc6;
+    --chart-point: #553e4e;
+  }
+  
+  .light-side {
+    --primary: #d8e2dc;
+    --secondary: #ffe5d9;
+    --primary-text: #735960;
+    --primary-input: #6e876e;
+    --success: #849a84;
+    --warning: #ec6f81;
+    --chart-text: #735960;
+    --chart-primary: #f0f4f2;
+    --chart-secondary: #f8daa5;
+    --chart-point: #6e876e;
+    --bg-overlay: rgba(0, 0, 0, 0.2);
+    --end-game-btn: var(--primary);
+  }
+  
+  .indigo-khaki {
+    --primary: #153b50;
+    --secondary: #1a4861;
+    --primary-text: #cfb9a5;
+    --primary-input: #878aab;
+    --success: #d9b726;
+    --warning: #a5392a;
+    --chart-text: #cfb9a5;
+    --chart-primary: #869cac;
+    --chart-secondary: hsl(235, 35%, 65%);
+    --chart-point: #153b50;
+  }
+  
+  .independent-coral {
+    --primary: #323848;
+    --secondary: #495b55;
+    --primary-text: #a2c3a4;
+    --primary-input: #ed9390;
+    --success: #c4f1be;
+    --warning: #ed9390;
+    --chart-text: #a2c3a4;
+    --chart-primary: #ed9390;
+    --chart-secondary: #c4f1be;
+    --chart-point: #495b55;
+  }
+  
+  .vinyard {
+    --primary: #423856;
+    --secondary: #726194;
+    --primary-text: #babaf3;
+    --primary-input: hsl(167, 24%, 50%);
+    --success: #c4ebc8;
+    --warning: #ee6c4d;
+    --chart-text: #babaf3;
+    --chart-primary: hsl(167, 24%, 50%);
+    --chart-secondary: hsl(260, 21%, 70%);
+    --chart-point: #423856;
+  }
+  
+  .nord {
+    --primary: #2e3140;
+    --secondary: #484f62;
+    --primary-text: #7d92a3;
+    --primary-input: #e0b1df;
+    --success: #7a9d7f;
+    --warning: #bd5d6b;
+    --chart-text: #7d92a3;
+    --chart-primary: #eecd9a;
+    --chart-secondary: #79b6d3;
+    --chart-point: #2e3140;
+  }
+  
+  .solarized-dark {
+    --primary: #00232c;
+    --secondary: #114952;
+    --primary-text: #268985;
+    --primary-input: #3787c4;
+    --success: #d9b726;
+    --warning: #a5392a;
+    --chart-text: #268985;
+    --chart-primary: #7b519d;
+    --chart-secondary: #d9b726;
+    --chart-point: #00232c;
+  }
+  

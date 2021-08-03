@@ -17,36 +17,15 @@
   --end-game-btn: var(--primary-text);
 }
 
+/* ----------------------- */
+/* ---- Global Styles ---- */
+/* ----------------------- */
+
 body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--primary);
   color: var(--primary-text);
   min-height: 100vh;
-}
-
-.header,
-.footer {
-  width: 100%;
-  background-color: var(--bg-overlay);
-  height: 4rem;
-  transition: opacity 0.4s ease-in-out;
-  margin-bottom: 4rem;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header.hide {
-  opacity: 0;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background-color: transparent;
-  margin: 0;
 }
 
 .flex {
@@ -56,6 +35,114 @@ body {
   align-items: center;
   gap: 3rem;
 }
+
+.btn {
+  background-color: transparent;
+  color: var(--primary-text);
+  cursor: pointer;
+  font-weight: 700;
+  border-radius: 5px;
+  padding: 0.75rem 1.25rem;
+  border: 1.5px solid var(--primary-text);
+}
+
+.btn:focus,
+.btn:active {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--secondary), 0 0 2px 2px var(--primary-text);
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+.success {
+  color: var(--success);
+}
+
+.warning {
+  color: var(--warning);
+}
+
+/* ---------------------- */
+/* ---- Input Styles ---- */
+/* ---------------------- */
+
+option {
+  background-color: var(--primary);
+}
+
+::-webkit-input-placeholder {
+  color: var(--primary-text);
+  opacity: 0.7;
+}
+:-moz-placeholder {
+  color: var(--primary-text);
+  opacity: 0.7;
+}
+::-moz-placeholder {
+  color: var(--primary-text);
+  opacity: 0.7;
+}
+:-ms-input-placeholder {
+  color: var(--primary-text);
+  opacity: 0.7;
+}
+::-ms-input-placeholder {
+  color: var(--primary-text);
+  opacity: 0.7;
+}
+
+.duration-select,
+.theme-select,
+.text-input {
+  width: 100%;
+  max-width: 300px;
+  border: 1.5px solid var(--primary-input);
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  appearance: none;
+  background-color: transparent;
+  color: var(--primary-input);
+}
+
+.duration-select:focus,
+.theme-select:focus,
+.text-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 1px var(--secondary), 0 0 2px 2px var(--primary-input);
+}
+
+.text-input {
+  color: var(--primary-text);
+  padding: 0.75rem 1.25rem;
+  margin-top: 0.625rem;
+}
+
+/* ----------------------- */
+/* ---- Header styles ---- */
+/* ----------------------- */
+
+.header,
+.footer {
+  width: 100%;
+  background-color: var(--bg-overlay);
+  height: 4rem;
+  margin-bottom: 4rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.header.hide {
+  opacity: 0;
+}
+
+/* ------------------------------- */
+/* ---- Test container styles ---- */
+/* ------------------------------- */
 
 .test-container {
   position: relative;
@@ -67,6 +154,25 @@ body {
   width: 90%;
   max-width: 500px;
   box-shadow: var(--container-shadow);
+}
+
+.start-btn {
+  margin: 1rem;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.test-container h3 {
+  margin-block: 1rem;
+}
+
+.word {
+  font-family: 'Roboto Mono', sans-serif;
+  font-size: 1.5rem;
 }
 
 .test-container.start::before {
@@ -108,6 +214,10 @@ body {
   }
 }
 
+/* -------------------------------- */
+/* ---- Chart container styles ---- */
+/* -------------------------------- */
+
 .chart-container {
   background-color: var(--bg-overlay);
   width: 90%;
@@ -128,97 +238,13 @@ body {
   padding: 0.5rem 0 0;
 }
 
-.btn {
-  background-color: transparent;
-  color: var(--primary-text);
-  cursor: pointer;
-  font-weight: 700;
-  border-radius: 5px;
-  padding: 0.75rem 1.25rem;
-  border: 1.5px solid var(--primary-text);
-}
-
 .settings-btn {
   padding: 0.5rem 0.75rem;
 }
 
-.start-btn {
-  margin: 1rem;
-}
-
-.no-click {
-  pointer-events: none;
-}
-
-.container p {
-  margin: 0.5rem;
-}
-
-.duration-select,
-.theme-select,
-.text-input {
-  width: 100%;
-  max-width: 300px;
-  border: 1.5px solid var(--primary-input);
-  border-radius: 5px;
-  padding: 0.25rem 0.5rem;
-  appearance: none;
-  background-color: transparent;
-  color: var(--primary-input);
-}
-
-.text-input {
-  color: var(--primary-text);
-}
-
-option {
-  background-color: var(--primary);
-}
-
-.text-input {
-  padding: 0.75rem 1.25rem;
-  margin-top: 0.625rem;
-}
-
-::-webkit-input-placeholder {
-  color: var(--primary-text);
-  opacity: 0.7;
-}
-:-moz-placeholder {
-  color: var(--primary-text);
-  opacity: 0.7;
-}
-::-moz-placeholder {
-  color: var(--primary-text);
-  opacity: 0.7;
-}
-:-ms-input-placeholder {
-  color: var(--primary-text);
-  opacity: 0.7;
-}
-::-ms-input-placeholder {
-  color: var(--primary-text);
-  opacity: 0.7;
-}
-
-.duration-select:focus,
-.theme-select:focus,
-.text-input:focus {
-  outline: none;
-  box-shadow: 0 0 0 1px var(--secondary), 0 0 2px 2px var(--primary-input);
-}
-
-.btn:focus,
-.btn:active {
-  outline: none;
-  box-shadow: 0 0 0 1px var(--secondary), 0 0 2px 2px var(--primary-text);
-}
-
-.scoreboard {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-}
+/* -------------------------------------------- */
+/* ---- Game end container styles ---- */
+/* -------------------------------------------- */
 
 .end-game-container {
   background-color: rgba(0, 0, 0, 0.8);
@@ -228,6 +254,7 @@ option {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 2em;
   position: absolute;
   top: -12.5%;
   left: -12.5%;
@@ -241,124 +268,30 @@ option {
   border-color: var(--end-game-btn);
 }
 
-.success {
-  color: var(--success);
+/* ----------------------- */
+/* ---- Footer styles ---- */
+/* ----------------------- */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  margin: 0;
 }
 
-.warning {
-  color: var(--warning);
-}
-
-.test-container h3 {
-  margin-block: 1rem;
-}
-
-.word {
-  font-family: 'Roboto Mono', sans-serif;
-  font-size: 1.5rem;
-}
+/* -------------------------------------------- */
+/* ---- Media queries ---- */
+/* -------------------------------------------- */
 
 @media (max-width: 625px) {
   :root {
-    font-size: 12px;
+    font-size: 75%;
   }
 }
 
 @media (max-width: 350px) {
   :root {
-    font-size: 10px;
+    font-size: 62.5%;
   }
-}
-
-.two-buck-chuck {
-  --primary: #553e4e;
-  --secondary: #98718c;
-  --primary-text: #eaedfa;
-  --primary-input: #f6a2b1;
-  --warning: #f6ae2d;
-  --success: #8db580;
-  --chart-text: #dadff7;
-  --chart-primary: #f7f7ee;
-  --chart-secondary: #c99cc6;
-  --chart-point: #553e4e;
-}
-
-.light-side {
-  --primary: #d8e2dc;
-  --secondary: #ffe5d9;
-  --primary-text: #735960;
-  --primary-input: #6e876e;
-  --success: #849a84;
-  --warning: #ec6f81;
-  --chart-text: #735960;
-  --chart-primary: #f0f4f2;
-  --chart-secondary: #f8daa5;
-  --chart-point: #6e876e;
-  --bg-overlay: rgba(0, 0, 0, 0.2);
-  --end-game-btn: var(--primary);
-}
-
-.indigo-khaki {
-  --primary: #153b50;
-  --secondary: #1a4861;
-  --primary-text: #cfb9a5;
-  --primary-input: #878aab;
-  --success: #d9b726;
-  --warning: #a5392a;
-  --chart-text: #cfb9a5;
-  --chart-primary: #869cac;
-  --chart-secondary: hsl(235, 35%, 65%);
-  --chart-point: #153b50;
-}
-
-.independent-coral {
-  --primary: #323848;
-  --secondary: #495b55;
-  --primary-text: #a2c3a4;
-  --primary-input: #ed9390;
-  --success: #c4f1be;
-  --warning: #ed9390;
-  --chart-text: #a2c3a4;
-  --chart-primary: #ed9390;
-  --chart-secondary: #c4f1be;
-  --chart-point: #495b55;
-}
-
-.vinyard {
-  --primary: #423856;
-  --secondary: #726194;
-  --primary-text: #babaf3;
-  --primary-input: hsl(167, 24%, 50%);
-  --success: #c4ebc8;
-  --warning: #ee6c4d;
-  --chart-text: #babaf3;
-  --chart-primary: hsl(167, 24%, 50%);
-  --chart-secondary: hsl(260, 21%, 70%);
-  --chart-point: #423856;
-}
-
-.nord {
-  --primary: #2e3140;
-  --secondary: #484f62;
-  --primary-text: #7d92a3;
-  --primary-input: #e0b1df;
-  --success: #7a9d7f;
-  --warning: #bd5d6b;
-  --chart-text: #7d92a3;
-  --chart-primary: #eecd9a;
-  --chart-secondary: #79b6d3;
-  --chart-point: #2e3140;
-}
-
-.solarized-dark {
-  --primary: #00232c;
-  --secondary: #114952;
-  --primary-text: #268985;
-  --primary-input: #3787c4;
-  --success: #d9b726;
-  --warning: #a5392a;
-  --chart-text: #268985;
-  --chart-primary: #7b519d;
-  --chart-secondary: #d9b726;
-  --chart-point: #00232c;
 }
