@@ -7,14 +7,16 @@
 
 :root {
   --primary: #563e4f;
-  --secondary: #98718c;
+  --primary-container: hsl(318, 16%, 27%);
   --primary-text: #d9def7;
+  --secondary: #98718c;
+  --accent: #ced4f3;
   --warning: #f6b02c;
   --success: #8fb582;
-  --primary-input: #ced4f3;
-  --container-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
-  --bg-overlay: rgba(255, 255, 255, 0.1);
   --end-game-btn: var(--primary-text);
+  --container-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
+  --focus-shadow: 0px 7.5px 10px -5px var(--primary-text);
+  --focus-accent-shadow: 0px 7.5px 10px -5px var(--accent);
 }
 
 /* ----------------------- */
@@ -39,18 +41,18 @@ body {
 
 .btn {
   background-color: transparent;
-  color: var(--primary-text);
+  color: var(--accent);
   cursor: pointer;
   font-weight: 700;
+  text-transform: uppercase;
   border-radius: 5px;
   padding: 0.75rem 1.25rem;
-  border: 1.5px solid var(--primary-text);
+  border: 1.5px solid var(--accent);
+  transition: transform 0.2s ease-in-out;
 }
 
-.btn:focus,
-.btn:active {
-  outline: none;
-  box-shadow: 0 0 0 1px var(--secondary), 0 0 2px 2px var(--primary-text);
+.btn:hover {
+  transform: scale(1.1);
 }
 
 .no-click {
@@ -98,26 +100,35 @@ option {
 .theme-select,
 .text-input {
   width: 100%;
-  max-width: 300px;
-  border: 1.5px solid var(--primary-input);
+  min-width: 125px;
+  max-width: 250px;
+  border: 1.5px solid var(--primary-text);
   border-radius: 5px;
   padding: 0.25rem 0.5rem;
   appearance: none;
   background-color: transparent;
-  color: var(--primary-input);
+  color: var(--primary-text);
 }
 
 .duration-select:focus,
 .theme-select:focus,
-.text-input:focus {
+.start-btn:focus
+ {
   outline: none;
-  box-shadow: 0 0 0 1px var(--secondary), 0 0 2px 2px var(--primary-input);
+  box-shadow: var(--focus-accent-shadow);
 }
 
+.text-input:focus,
+.icon-btn:focus {
+  outline: none;
+  box-shadow: var(--focus-shadow);
+}
 .text-input {
   color: var(--primary-text);
   padding: 0.75rem 1.25rem;
   margin-top: 0.625rem;
+  border: 1.5px solid var(--accent);
+  border-radius: 5px;
 }
 
 .select-wrapper {
@@ -132,6 +143,8 @@ option {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
+  text-align: center;
+  color: var(--accent);
   opacity: 0.8;
 }
 
@@ -143,7 +156,7 @@ option {
   position: relative;
   width: 75%;
   max-width: 750px;
-  background-color: var(--bg-overlay);
+  background-color: var(--primary-container);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -151,23 +164,25 @@ option {
   margin: 1.5em auto 3em;
   padding: 1.5em;
   box-shadow: var(--container-shadow);
-  transition: opacity 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out;
 }
 
-.header::before,
-.chart-container::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  border-radius: 5px;
-  background-color: var(--primary);
-  transition: opacity 0.4s ease-in-out;
+.header.hide {
+  transform: translateY(-200%);
 }
 
-.header.hide,
-.header.hide::before {
-  opacity: 0;
+.brand {
+  font-family: 'Roboto Mono', sans-serif;
+  opacity: 0.8;
+}
+
+.brand span {
+  color: var(--accent);
+}
+
+.version {
+  font-size: 1rem;
+  color: var(--accent);
 }
 
 /* ------------------------------- */
@@ -187,6 +202,9 @@ option {
 
 .start-btn {
   margin: 1em;
+  background-color: transparent;
+  color: var(--primary-text);
+  border-color: var(--primary-text);
 }
 
 .scoreboard {
@@ -196,7 +214,17 @@ option {
 }
 
 .test-container h3 {
+  font-family: 'Roboto Mono', sans-serif;
   margin-block: 1em;
+}
+
+.time-container, .score-container {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  opacity: 0.8;
 }
 
 .word {
@@ -219,7 +247,7 @@ option {
   position: absolute;
   inset: 0;
   background-color: transparent;
-  color: var(--primary-input);
+  color: var(--accent);
   font-size: 5rem;
   border-radius: 5px;
   opacity: 0.8;
@@ -249,7 +277,7 @@ option {
 
 .chart-container {
   position: relative;
-  background-color: var(--bg-overlay);
+  background-color: var(--primary-container);
   width: 90%;
   max-width: 500px;
   border-radius: 5px;
@@ -308,16 +336,15 @@ option {
   left: 0;
   bottom: 0;
   margin: 0;
-  padding: 0.5em;
-}
-
-.settings-btn {
-  padding: 0.5em 0.75em;
+  padding: 1em;
 }
 
 .icon-btn {
+  padding: 0.5em 0.75em;
   background-color: var(--primary);
 }
+
+
 
 /* -------------------------------------------- */
 /* ---- Media queries ---- */

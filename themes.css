@@ -1,8 +1,9 @@
 .two-buck-chuck {
     --primary: #553e4e;
+    --primary-container: #503a49;
     --secondary: #98718c;
+    --accent: #f6a2b1;
     --primary-text: #eaedfa;
-    --primary-input: #f6a2b1;
     --warning: #f6ae2d;
     --success: #8db580;
     --chart-text: #dadff7;
@@ -13,24 +14,26 @@
   
   .light-side {
     --primary: #d8e2dc;
+    --primary-container: #a7beb0;
     --secondary: #ffe5d9;
+    --accent: #6e876e;
     --primary-text: #735960;
-    --primary-input: #6e876e;
     --success: #849a84;
     --warning: #ec6f81;
     --chart-text: #735960;
     --chart-primary: #f0f4f2;
     --chart-secondary: #f8daa5;
     --chart-point: #6e876e;
-    --bg-overlay: rgba(0, 0, 0, 0.2);
     --end-game-btn: var(--primary);
+    --focus-shadow: rgba(0, 0, 0, 0.4);
   }
   
   .indigo-khaki {
     --primary: #153b50;
+    --primary-container: #102d3c;
     --secondary: #1a4861;
+    --accent: #878aab;
     --primary-text: #cfb9a5;
-    --primary-input: #878aab;
     --success: #d9b726;
     --warning: #a5392a;
     --chart-text: #cfb9a5;
@@ -41,10 +44,11 @@
   
   .independent-coral {
     --primary: #323848;
+    --primary-container: #3f465a;
     --secondary: #495b55;
+    --accent: #ed9390;
     --primary-text: #a2c3a4;
-    --primary-input: #ed9390;
-    --success: #c4f1be;
+    --success: #8ce481;
     --warning: #ed9390;
     --chart-text: #a2c3a4;
     --chart-primary: #ed9390;
@@ -54,9 +58,10 @@
   
   .vinyard {
     --primary: #423856;
+    --primary-container: #473c5d;
     --secondary: #726194;
+    --accent: #619e91;
     --primary-text: #babaf3;
-    --primary-input: #619e91;
     --success: #c4ebc8;
     --warning: #ee6c4d;
     --chart-text: #babaf3;
@@ -67,9 +72,10 @@
   
   .nord {
     --primary: #2e3140;
+    --primary-container: #3c4053;
     --secondary: #484f62;
+    --accent: #e0b1df;
     --primary-text: #7d92a3;
-    --primary-input: #e0b1df;
     --success: #7a9d7f;
     --warning: #bd5d6b;
     --chart-text: #7d92a3;
@@ -80,9 +86,10 @@
   
   .solarized-dark {
     --primary: #00232c;
+    --primary-container: #003d4d;
     --secondary: #114952;
+    --accent: #3787c4;
     --primary-text: #268985;
-    --primary-input: #3787c4;
     --success: #d9b726;
     --warning: #a5392a;
     --chart-text: #268985;
