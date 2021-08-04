@@ -35,7 +35,7 @@
     --warning: #a5392a;
     --chart-text: #cfb9a5;
     --chart-primary: #869cac;
-    --chart-secondary: hsl(235, 35%, 65%);
+    --chart-secondary: #878cc5;
     --chart-point: #153b50;
   }
   
@@ -56,12 +56,12 @@
     --primary: #423856;
     --secondary: #726194;
     --primary-text: #babaf3;
-    --primary-input: hsl(167, 24%, 50%);
+    --primary-input: #619e91;
     --success: #c4ebc8;
     --warning: #ee6c4d;
     --chart-text: #babaf3;
-    --chart-primary: hsl(167, 24%, 50%);
-    --chart-secondary: hsl(260, 21%, 70%);
+    --chart-primary: #619e91;
+    --chart-secondary: #ada2c3;
     --chart-point: #423856;
   }
   

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Mono&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,12 +6,12 @@
 }
 
 :root {
-  --primary: hsl(318, 16%, 29%);
-  --secondary: hsl(318, 16%, 52%);
-  --primary-text: hsl(230, 64%, 91%);
-  --warning: hsl(39, 92%, 57%);
-  --success: hsl(105, 26%, 61%);
-  --primary-input: hsl(230, 61%, 88%);
+  --primary: #563e4f;
+  --secondary: #98718c;
+  --primary-text: #d9def7;
+  --warning: #f6b02c;
+  --success: #8fb582;
+  --primary-input: #ced4f3;
   --container-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
   --bg-overlay: rgba(255, 255, 255, 0.1);
   --end-game-btn: var(--primary-text);
@@ -25,7 +25,8 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: var(--primary);
   color: var(--primary-text);
-  min-height: 100vh;
+  max-height: 100vh;
+  z-index: -2;
 }
 
 .flex {
@@ -119,24 +120,53 @@ option {
   margin-top: 0.625rem;
 }
 
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1em;
+}
+
+.select-label {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
 /* ----------------------- */
 /* ---- Header styles ---- */
 /* ----------------------- */
 
-.header,
-.footer {
-  width: 100%;
+.header {
+  position: relative;
+  width: 75%;
+  max-width: 750px;
   background-color: var(--bg-overlay);
-  height: 4rem;
-  margin-bottom: 4rem;
-  padding: 1rem;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 1.5em auto 3em;
+  padding: 1.5em;
+  box-shadow: var(--container-shadow);
   transition: opacity 0.4s ease-in-out;
 }
 
-.header.hide {
+.header::before,
+.chart-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 5px;
+  background-color: var(--primary);
+  transition: opacity 0.4s ease-in-out;
+}
+
+.header.hide,
+.header.hide::before {
   opacity: 0;
 }
 
@@ -146,18 +176,17 @@ option {
 
 .test-container {
   position: relative;
-  background-color: var(--secondary);
-  padding: 1.25rem;
-  border-radius: 5px;
-  position: relative;
-  text-align: center;
   width: 90%;
   max-width: 500px;
+  background-color: var(--secondary);
+  text-align: center;
+  border-radius: 5px;
+  padding: 1.25rem;
   box-shadow: var(--container-shadow);
 }
 
 .start-btn {
-  margin: 1rem;
+  margin: 1em;
 }
 
 .scoreboard {
@@ -167,7 +196,7 @@ option {
 }
 
 .test-container h3 {
-  margin-block: 1rem;
+  margin-block: 1em;
 }
 
 .word {
@@ -178,23 +207,23 @@ option {
 .test-container.start::before {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 5px;
-  pointer-events: none;
-  font-size: 5rem;
   background-color: rgba(0, 0, 0, 0.6);
+  font-size: 5rem;
+  border-radius: 5px;
+  inset: 0;
+  pointer-events: none;
 }
 
 .test-container.start::after {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 5px;
-  pointer-events: none;
-  font-size: 5rem;
   background-color: transparent;
   color: var(--primary-input);
+  font-size: 5rem;
+  border-radius: 5px;
   opacity: 0.8;
+  pointer-events: none;
   animation: countdown 3.4s linear;
 }
 
@@ -219,11 +248,12 @@ option {
 /* -------------------------------- */
 
 .chart-container {
+  position: relative;
   background-color: var(--bg-overlay);
   width: 90%;
   max-width: 500px;
   border-radius: 5px;
-  padding: 1.25rem;
+  padding: 1.25em;
   box-shadow: var(--container-shadow);
 }
 
@@ -235,11 +265,7 @@ option {
 
 .stats p {
   font-size: 0.75rem;
-  padding: 0.5rem 0 0;
-}
-
-.settings-btn {
-  padding: 0.5rem 0.75rem;
+  padding-top: 0.5em;
 }
 
 /* -------------------------------------------- */
@@ -273,11 +299,24 @@ option {
 /* ----------------------- */
 
 .footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   background-color: transparent;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   margin: 0;
+  padding: 0.5em;
+}
+
+.settings-btn {
+  padding: 0.5em 0.75em;
+}
+
+.icon-btn {
+  background-color: var(--primary);
 }
 
 /* -------------------------------------------- */
