@@ -19,13 +19,16 @@
             <p class='select-label'>color theme</p>
             <form id="theme-form">
                 <select id="theme" class='theme-select'>
+                    <option value='dark'>Dark</option>
+                    <option value='light'>Light</option>
                     <option value='two-buck-chuck'>2 Buck Chuck</option>
-                    <option value='light-side'>Light Side</option>
+                    <option value='zen-garden'>Zen Garden</option>
                     <option value='indigo-khaki'>Indigo Khaki</option>
                     <option value='independent-coral'>Independent Coral</option>
                     <option value='vinyard'>Vinyard</option>
                     <option value='nord'>Nord</option>
                     <option value='solarized-dark'>Solarized Dark</option>
+                    <option value='dracula'>Dracula</option>
                 </select>
             </form>
         </div>
@@ -53,10 +56,19 @@
             </div>
             <h3>Type the following:</h3>
             <h2 id="word" class='word'>&nbsp</h2>
-            <input type="text" id="text" autocomplete="off" placeholder='Type the words here...' class='text-input'>
-            <button id="start-btn" class="btn start-btn">
-                Start Timer
-            </button>
+            <div class="flex-row">
+                <input type="text" id="text" autocomplete="off" placeholder='Type the words here...' class='text-input'>
+                <button id="start-btn" class="btn start-btn">
+                    Start
+                </button>
+                <button id="cancel-btn" class="btn icon-btn cancel-btn hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+                        display="block" id="Cross">
+                        <path d="M20 20L4 4m16 0L4 20" />
+                    </svg>
+                </button>
+            </div>
             <div id="end-game-container" class="end-game-container">
                 <h1>Test Results</h1>
                 <div>
@@ -92,7 +104,7 @@
                 <path d="M14 11v5" />
             </svg>
         </button>
-        <button id="settings-btn" class="btn icon-btn" title="Show/Hide Settings Bar">
+        <button id="settings-btn" class="btn icon-btn" title="Show/slide Settings Bar">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" display="block"
                 id="Gear">
