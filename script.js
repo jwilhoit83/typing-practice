@@ -17,6 +17,7 @@ const durationSelect = document.getElementById('duration')
 const themeSelect = document.getElementById('theme')
 
 // stats elements
+
 const avgWPM = document.getElementById('avg-wpm')
 const maxWPM = document.getElementById('max-wpm')
 const minWPM = document.getElementById('min-wpm')
@@ -24,7 +25,7 @@ const avgAcc = document.getElementById('avg-acc')
 const maxAcc = document.getElementById('max-acc')
 const minAcc = document.getElementById('min-acc')
 
-//set the color theme from local storage and set background image color
+// set the color theme from local storage and set background image color
 
 document.documentElement.classList = localStorage.getItem('prevTheme')
   ? localStorage.getItem('prevTheme')

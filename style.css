@@ -173,7 +173,7 @@ option {
 
 .header {
   position: relative;
-  width: 75%;
+  width: 95%;
   max-width: 750px;
   background-color: var(--primary-container);
   border-radius: 5px;
@@ -327,6 +327,20 @@ option {
 @media (max-width: 625px) {
   :root {
     font-size: 75%;
+  }
+}
+
+@media (max-width: 720px) {
+  .brand {
+    font-size: 1.5rem;
+  }
+  .brand sup {
+    font-size: 0.75rem;
+  }
+
+  .duration-select, .theme-select, .select-label {
+    font-size: 0.75rem;
+    min-width: 75px;
   }
 }
 
