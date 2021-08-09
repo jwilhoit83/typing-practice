@@ -9,6 +9,9 @@ const accuracy = document.getElementById('accuracy')
 const resetBtn = document.getElementById('reset')
 const startBtn = document.getElementById('start-btn')
 const cancelBtn = document.getElementById('cancel-btn')
+const modalCancelBtn = document.getElementById('modal-cancel')
+const modalConfirmBtn = document.getElementById('modal-confirm')
+const confirmationModal = document.getElementById('confirmation-modal')
 const settingsBtn = document.getElementById('settings-btn')
 const clearBtn = document.getElementById('clear-data-btn')
 const settings = document.getElementById('settings')
@@ -322,6 +325,14 @@ themeSelect.addEventListener('change', e => {
 })
 
 clearBtn.addEventListener('click', () => {
+  confirmationModal.style.display = 'flex'
+})
+
+modalCancelBtn.addEventListener('click', () => {
+  confirmationModal.style.display = 'none'
+})
+
+modalConfirmBtn.addEventListener('click', () => {
   localStorage.clear()
   progressChart.destroy()
   scoresArr = []
@@ -329,4 +340,5 @@ clearBtn.addEventListener('click', () => {
   accuracyArr = []
   wpmArr = []
   createChart()
+  confirmationModal.style.display = 'none'
 })

@@ -7,7 +7,7 @@
 
 :root {
   --primary: #563e4f;
-  --primary-container: hsl(318, 16%, 27%);
+  --primary-container: rgb(80, 58, 73);
   --primary-text: #d9def7;
   --secondary: #98718c;
   --accent: #ced4f3;
@@ -120,6 +120,8 @@ option {
 .duration-select,
 .theme-select,
 .text-input {
+  font-family: inherit;
+  font-size: 0.875rem;
   width: 100%;
   min-width: 125px;
   max-width: 250px;
@@ -320,9 +322,50 @@ option {
   padding: 1em;
 }
 
-/* -------------------------------------------- */
+/* ---------------------- */
+/* ---- Modal styles ---- */
+/* ---------------------- */
+
+.confirmation-modal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: var(--primary-container);
+  color: var(--primary-text);
+  border: 2px solid var(--accent);
+  border-radius: 5px;
+  box-shadow: var(--container-shadow);
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5em;
+  gap: 2em;
+}
+
+.modal-muted {
+  color: var(--accent);
+  font-size: 0.875rem;
+}
+
+.flex-btns {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-confirm {
+  color: var(--warning);
+  border-color: var(--warning);
+}
+
+/* ----------------------- */
 /* ---- Media queries ---- */
-/* -------------------------------------------- */
+/* ----------------------- */
 
 @media (max-width: 625px) {
   :root {

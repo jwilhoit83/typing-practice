@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="keyboard.svg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"> -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="themes.css">
     <title>dev-typer</title>
@@ -44,7 +43,7 @@
             </form>
         </div>
     </header>
-    <div class="flex">
+    <section class="flex">
         <div id='test-container' class="test-container">
             <div class="scoreboard">
                 <p class="time-container">
@@ -90,6 +89,16 @@
                 <p>Max Accuracy: <span id='max-acc'></span></p>
                 <p>Min Accuracy: <span id='min-acc'></span></p>
             </div>
+        </div>
+    </section>
+    <div id='confirmation-modal' class="confirmation-modal">
+        <div>
+            <h1>Are you sure you want to clear all of your past data?</h1>
+            <p class='modal-muted'>(you can not get it back)</p>
+        </div>
+        <div class="flex-btns">
+            <div id='modal-cancel' class="btn">Cancel</div>
+            <div id='modal-confirm' class="btn modal-confirm">Confirm</div>
         </div>
     </div>
     <div class="footer">
