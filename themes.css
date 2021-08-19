@@ -121,7 +121,7 @@
 }
 
 .solarized-dark {
-  --primary: #00232c;
+  --primary: #00252e;
   --primary-container: #003d4d;
   --secondary: #114952;
   --accent: #3787c4;
@@ -143,9 +143,24 @@
   --primary-text: #d3b7fb;
   --success: #ffb86c;
   --warning: #ff5555;
-  --chart-text: #bd93f9;
+  --chart-text: #bf95f9;
   --chart-text-faded: rgba(189, 147, 249, 0.3);
   --chart-primary: #8be9fd;
   --chart-secondary: #6272a4;
   --chart-point: #282a36;
+}
+
+.olivia {
+  --primary: #1a1a1a;
+  --primary-container: #2b2b2b;
+  --secondary: #3c3c3c;
+  --accent: #f1beb0;
+  --primary-text: #e1dbd1;
+  --warning: #ec6f81;
+  --success: #8db580;
+  --chart-text: #e1dbd1;
+  --chart-text-faded: rgba(225, 219, 209, 0.3);
+  --chart-primary: #e1dbd1;
+  --chart-secondary: #f1beb0;
+  --chart-point: #1a1a1a;
 }

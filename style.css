@@ -58,7 +58,7 @@ svg {
 .btn {
   background-color: transparent;
   color: var(--accent);
-  cursor: pointer;
+  /* cursor: pointer; */
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 5px;
@@ -70,6 +70,11 @@ svg {
 .icon-btn {
   padding: 0.5em 0.75em;
   background-color: var(--primary);
+}
+
+.btn-warning {
+  color: var(--warning);
+  border-color: var(--warning);
 }
 
 .btn:hover {
@@ -358,10 +363,7 @@ option {
   align-items: center;
 }
 
-.modal-confirm {
-  color: var(--warning);
-  border-color: var(--warning);
-}
+
 
 /* ----------------------- */
 /* ---- Media queries ---- */
