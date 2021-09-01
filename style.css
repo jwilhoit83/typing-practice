@@ -58,7 +58,6 @@ svg {
 .btn {
   background-color: transparent;
   color: var(--accent);
-  /* cursor: pointer; */
   font-weight: 700;
   text-transform: uppercase;
   border-radius: 5px;
@@ -122,8 +121,7 @@ option {
   opacity: 0.7;
 }
 
-.duration-select,
-.theme-select,
+.header-select,
 .text-input {
   font-family: inherit;
   font-size: 0.875rem;
@@ -138,8 +136,7 @@ option {
   color: var(--primary-text);
 }
 
-.duration-select:focus,
-.theme-select:focus,
+.header-select:focus,
 .start-btn:focus {
   outline: none;
   box-shadow: var(--focus-accent-shadow);
@@ -379,11 +376,11 @@ option {
   .brand {
     font-size: 1.5rem;
   }
-  .brand sup {
+  .version {
     font-size: 0.75rem;
   }
 
-  .duration-select, .theme-select, .select-label {
+  .header-select, .select-label {
     font-size: 0.75rem;
     min-width: 75px;
   }
