@@ -45,7 +45,7 @@
 }
 
 .zen-garden {
-  --primary: #d8e2dc;
+  --primary: hsl(144, 15%, 87%);
   --primary-container: #c4d4ca;
   --secondary: #fff4f0;
   --accent: #677e67;
