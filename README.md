@@ -10,3 +10,7 @@ The chart.js chart for previous scores is another addition to Brad's design and 
 Currently the app makes use of local storage to carry over the theme, duration, and previous scores from previous tests.  In the future I would like to implement a simple backend with a simple auth and db storage for the past test data.
 
 It is still a work in progress but I am enjoying it so far.
+
+## Working Demo
+
+https://dev-typer.netlify.app/
