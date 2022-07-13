@@ -190,7 +190,7 @@ function createChart() {
     "--chart-text"
   );
   const lines = getComputedStyle(document.documentElement).getPropertyValue(
-    "--chart-text-faded"
+    "--clr-border"
   );
   const primary = getComputedStyle(document.documentElement).getPropertyValue(
     "--chart-primary"
