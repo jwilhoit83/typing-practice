@@ -7,10 +7,10 @@
   --warning: #ec6f81;
   --success: #8db580;
   --chart-text: #eeeeee;
-  --chart-text-faded: rgba(238, 238, 238, 0.3);
   --chart-primary: #bdbdbd;
   --chart-secondary: #f5f5f5;
   --chart-point: #212121;
+  --clr-border: rgba(238, 238, 238, 0.3);
 }
 
 .light {
@@ -22,7 +22,7 @@
   --warning: #ec6f81;
   --success: #8db580;
   --chart-text: #757575;
-  --chart-text-faded: rgba(117, 117, 117, 0.3);
+  --clr-border: rgba(117, 117, 117, 0.3);
   --chart-primary: #fafafa;
   --chart-secondary: #e0e0e0;
   --chart-point: #424242;
@@ -38,7 +38,7 @@
   --warning: #ec6f81;
   --success: #8db580;
   --chart-text: #dadff7;
-  --chart-text-faded: rgba(218, 223, 247, 0.3);
+  --clr-border: rgba(218, 223, 247, 0.3);
   --chart-primary: #f7f7ee;
   --chart-secondary: #c99cc6;
   --chart-point: #553e4e;
@@ -53,7 +53,7 @@
   --success: #849a84;
   --warning: #ec6f81;
   --chart-text: #735960;
-  --chart-text-faded: rgba(115, 89, 96, 0.3);
+  --clr-border: rgba(115, 89, 96, 0.3);
   --chart-primary: #e2e9e6;
   --chart-secondary: #fbebd0;
   --chart-point: #6e876e;
@@ -69,7 +69,7 @@
   --success: #d9b726;
   --warning: #a5392a;
   --chart-text: #cfb9a5;
-  --chart-text-faded: rgba(207, 185, 165, 0.3);
+  --clr-border: rgba(207, 185, 165, 0.3);
   --chart-primary: #869cac;
   --chart-secondary: #878cc5;
   --chart-point: #153b50;
@@ -84,7 +84,7 @@
   --success: #8ce481;
   --warning: #ec6f81;
   --chart-text: #a2c3a4;
-  --chart-text-faded: rgba(162, 195, 164, 0.3);
+  --clr-border: rgba(162, 195, 164, 0.3);
   --chart-primary: #ed9390;
   --chart-secondary: #c4f1be;
   --chart-point: #495b55;
@@ -99,7 +99,7 @@
   --success: #c4ebc8;
   --warning: #ee6c4d;
   --chart-text: #babaf3;
-  --chart-text-faded: rgba(186, 186, 243, 0.3);
+  --clr-border: rgba(186, 186, 243, 0.3);
   --chart-primary: #619e91;
   --chart-secondary: #ada2c3;
   --chart-point: #423856;
@@ -114,7 +114,7 @@
   --success: #7a9d7f;
   --warning: #bd5d6b;
   --chart-text: #7d92a3;
-  --chart-text-faded: rgba(125, 146, 163, 0.3);
+  --clr-border: rgba(125, 146, 163, 0.3);
   --chart-primary: #eecd9a;
   --chart-secondary: #79b6d3;
   --chart-point: #2e3140;
@@ -129,7 +129,7 @@
   --success: #d9b726;
   --warning: #a5392a;
   --chart-text: #268985;
-  --chart-text-faded: rgba(38, 137, 133, 0.3);
+  --clr-border: rgba(38, 137, 133, 0.3);
   --chart-primary: #7b519d;
   --chart-secondary: #d9b726;
   --chart-point: #00232c;
@@ -144,7 +144,7 @@
   --success: #ffb86c;
   --warning: #ff5555;
   --chart-text: #bf95f9;
-  --chart-text-faded: rgba(189, 147, 249, 0.3);
+  --clr-border: rgba(189, 147, 249, 0.3);
   --chart-primary: #8be9fd;
   --chart-secondary: #6272a4;
   --chart-point: #282a36;
@@ -159,7 +159,7 @@
   --warning: #ec6f81;
   --success: #8db580;
   --chart-text: #e1dbd1;
-  --chart-text-faded: rgba(225, 219, 209, 0.3);
+  --clr-border: rgba(225, 219, 209, 0.3);
   --chart-primary: #e1dbd1;
   --chart-secondary: #f1beb0;
   --chart-point: #1a1a1a;

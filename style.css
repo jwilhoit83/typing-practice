@@ -21,6 +21,7 @@
   --container-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
   --focus-shadow: 0px 7.5px 10px -5px var(--primary-text);
   --focus-accent-shadow: 0px 7.5px 10px -5px var(--accent);
+  --container-border: 1px solid var(--clr-border);
 }
 
 /* ----------------------- */
@@ -29,7 +30,8 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: radial-gradient(var(--secondary), var(--primary-container));
+  /* background: linear-gradient(45deg, var(--secondary), var(--primary-container)); */
+  background-color: var(--primary-container);
   color: var(--primary-text);
   min-height: 100%;
   margin: 0;
@@ -168,6 +170,7 @@ option {
   padding: 1.5em;
   box-shadow: var(--container-shadow);
   transition: transform 0.4s ease-in-out;
+  border: var(--container-border);
 }
 
 .header.slide {
@@ -201,6 +204,7 @@ option {
   border-radius: 5px;
   padding: 1.25rem;
   box-shadow: var(--container-shadow);
+  border: var(--container-border);
 }
 
 .start-btn {
@@ -254,6 +258,7 @@ option {
   padding: 1.25em;
   box-shadow: var(--container-shadow);
   margin-bottom: 0;
+  border: var(--container-border);
 }
 
 .stats {
