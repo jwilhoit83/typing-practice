@@ -7,7 +7,7 @@
 
 :root {
   --primary: #563e4f;
-  --primary-container: rgb(80, 58, 73);
+  --primary-container: hsl(319, 16%, 27%);
   --primary-text: #d9def7;
   --secondary: #98718c;
   --accent: #ced4f3;
@@ -29,10 +29,10 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--primary);
+  background: radial-gradient(var(--secondary), var(--primary-container));
   color: var(--primary-text);
-  max-height: 100vh;
-  z-index: -2;
+  min-height: 100%;
+  margin: 0;
 }
 
 svg {
@@ -51,8 +51,8 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1em;
-  margin-top: 1em;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .btn {
@@ -68,7 +68,7 @@ svg {
 
 .icon-btn {
   padding: 0.5em 0.75em;
-  background-color: var(--primary);
+  font-weight: 400;
 }
 
 .btn-warning {
@@ -77,7 +77,7 @@ svg {
 }
 
 .btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .hidden {
@@ -92,6 +92,7 @@ svg {
   color: var(--warning);
 }
 
+
 /* ---------------------- */
 /* ---- Input Styles ---- */
 /* ---------------------- */
@@ -103,10 +104,10 @@ option {
 .header-select,
 .text-input {
   font-family: inherit;
-  font-size: 0.875rem;
+  font-size: 1rem;
   width: 100%;
-  min-width: 125px;
-  max-width: 250px;
+  min-width: 8rem;
+  max-width: 16rem;
   border: 1.5px solid var(--primary-text);
   border-radius: 5px;
   padding: 0.25rem 0.5rem;
@@ -252,6 +253,7 @@ option {
   border-radius: 5px;
   padding: 1.25em;
   box-shadow: var(--container-shadow);
+  margin-bottom: 0;
 }
 
 .stats {

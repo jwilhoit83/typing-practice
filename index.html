@@ -1,131 +1,140 @@
 <!DOCTYPE html>
-<html lang="en" class='default'>
+<html lang="en" class="default">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="logo.svg" type="image/x-icon" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="themes.css">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="themes.css" />
     <title>dev-typer</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header id="settings" class="header">
-        <div class="select-wrapper">
-            <p class='select-label'>color theme</p>
-            <form id="theme-form">
-                <select id="theme" class='header-select'>
-                    <option value='dark'>Dark</option>
-                    <option value='light'>Light</option>
-                    <option value='two-buck-chuck'>2 Buck Chuck</option>
-                    <option value='zen-garden'>Zen Garden</option>
-                    <option value='indigo-khaki'>Indigo Khaki</option>
-                    <option value='independent-coral'>Independent Coral</option>
-                    <option value='vinyard'>Vinyard</option>
-                    <option value='nord'>Nord</option>
-                    <option value='solarized-dark'>Solarized Dark</option>
-                    <option value='dracula'>Dracula</option>
-                    <option value='olivia'>Olivia</option>
-                </select>
-            </form>
-        </div>
-        <h1 class='brand'>dev<span>-</span>typer<sup class='version'>1.0</sup></h1>
-        <div class="select-wrapper">
-            <p class='select-label'>test duration</p>
-            <form id="settings-form">
-                <select id="duration" class='header-select'>
-                    <option value=30>Short</option>
-                    <option value=60>Medium</option>
-                    <option value=120>Long</option>
-                </select>
-            </form>
-        </div>
+      <div class="select-wrapper">
+        <p class="select-label">color theme</p>
+        <form id="theme-form">
+          <select id="theme" class="header-select">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="two-buck-chuck">2 Buck Chuck</option>
+            <option value="zen-garden">Zen Garden</option>
+            <!-- <option value="indigo-khaki">Indigo Khaki</option> -->
+            <option value="independent-coral">Independent Coral</option>
+            <option value="vinyard">Vinyard</option>
+            <option value="nord">Nord</option>
+            <option value="solarized-dark">Solarized Dark</option>
+            <option value="dracula">Dracula</option>
+            <!-- <option value="olivia">Olivia</option> -->
+          </select>
+        </form>
+      </div>
+      <h1 class="brand">
+        dev<span>-</span>typer<sup class="version">1.0</sup>
+      </h1>
+      <div class="select-wrapper">
+        <p class="select-label">test duration</p>
+        <form id="settings-form">
+          <select id="duration" class="header-select">
+            <option value="30">Short</option>
+            <option value="60">Medium</option>
+            <option value="120">Long</option>
+          </select>
+        </form>
+      </div>
     </header>
     <section class="flex">
-        <div id='test-container' class="test-container">
-            <div class="scoreboard">
-                <p class="time-container">
-                    Time left: <span id="time"></span>
-                </p>
-                <p class="score-container">
-                    WPM: <span id="score">0</span>
-                </p>
-            </div>
-            <h3>Type the following:</h3>
-            <h2 id="word" class='word'>&nbsp</h2>
-            <div class="flex-row">
-                <input type="text" id="text" autocomplete="off" placeholder='Type the words here...' class='text-input'>
-                <button id="start-btn" class="btn start-btn">
-                    Start
-                </button>
-                <button id="cancel-btn" class="btn icon-btn cancel-btn hidden">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26.66" height="26.66" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
-                        display="block" id="Cross">
-                        <path d="M20 20L4 4m16 0L4 20" />
-                    </svg>
-                </button>
-            </div>
-            <div id="end-game-container" class="end-game-container">
-                <h1>Test Results</h1>
-                <div>
-                    <p>Words Per Minute: <span id='wpm'></span></p>
-                    <p>Accuracy: <span id='accuracy'></span></p>
-                </div>
-                <button id='reset' class='btn'>Try Again</button>
-            </div>
+      <div id="test-container" class="test-container">
+        <div class="scoreboard">
+          <p class="time-container">Time left: <span id="time"></span></p>
+          <p class="score-container">WPM: <span id="score">0</span></p>
         </div>
-        <div class="chart-container">
-            <canvas id="score-chart" width="500" height="300"></canvas>
-            <div class="stats">
-                <p>Avg. WPM: <span id='avg-wpm'></span></p>
-                <p>Max WPM: <span id='max-wpm'></span></p>
-                <p>Min WPM: <span id='min-wpm'></span></p>
-            </div>
-            <div class="stats">
-                <p>Avg. Accuracy: <span id='avg-acc'></span></p>
-                <p>Max Accuracy: <span id='max-acc'></span></p>
-                <p>Min Accuracy: <span id='min-acc'></span></p>
-            </div>
+        <h3>Type the following:</h3>
+        <h2 id="word" class="word">&nbsp</h2>
+        <div class="flex-row">
+          <input
+            type="text"
+            id="text"
+            autocomplete="off"
+            placeholder="Type the words here..."
+            class="text-input"
+          />
+          <button id="start-btn" class="btn start-btn">Start</button>
+          <button id="cancel-btn" class="btn icon-btn cancel-btn hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26.66"
+              height="26.66"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              display="block"
+              id="Cross"
+            >
+              <path d="M20 20L4 4m16 0L4 20" />
+            </svg>
+          </button>
         </div>
+        <div id="end-game-container" class="end-game-container">
+          <h1>Test Results</h1>
+          <div>
+            <p>Words Per Minute: <span id="wpm"></span></p>
+            <p>Accuracy: <span id="accuracy"></span></p>
+          </div>
+          <button id="reset" class="btn">Try Again</button>
+        </div>
+      </div>
+      <div class="chart-container">
+        <canvas id="score-chart" width="500" height="300"></canvas>
+        <div class="stats">
+          <p>Avg. WPM: <span id="avg-wpm"></span></p>
+          <p>Max WPM: <span id="max-wpm"></span></p>
+          <p>Min WPM: <span id="min-wpm"></span></p>
+        </div>
+        <div class="stats">
+          <p>Avg. Accuracy: <span id="avg-acc"></span></p>
+          <p>Max Accuracy: <span id="max-acc"></span></p>
+          <p>Min Accuracy: <span id="min-acc"></span></p>
+        </div>
+      </div>
     </section>
-    <div id='confirmation-modal' class="confirmation-modal">
-        <div>
-            <h1>Are you sure you want to clear all of your past data?</h1>
-            <p class='modal-muted'>(you can not get it back)</p>
-        </div>
-        <div class="flex-btns">
-            <div id='modal-cancel' class="btn">Cancel</div>
-            <div id='modal-confirm' class="btn btn-warning">Confirm</div>
-        </div>
+    <div id="confirmation-modal" class="confirmation-modal">
+      <div>
+        <h1>Are you sure you want to clear all of your past data?</h1>
+        <p class="modal-muted">(you can not get it back)</p>
+      </div>
+      <div class="flex-btns">
+        <div id="modal-cancel" class="btn">Cancel</div>
+        <div id="modal-confirm" class="btn btn-warning">Confirm</div>
+      </div>
     </div>
     <div class="footer">
-        <button id="clear-data-btn" class="btn icon-btn" title='Clear Past Chart Data'>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" display="block"
-                id="TrashCan">
-                <path d="M4 6h16l-1.58 14.22A2 2 0 0 1 16.432 22H7.568a2 2 0 0 1-1.988-1.78L4 6z" />
-                <path d="M7.345 3.147A2 2 0 0 1 9.154 2h5.692a2 2 0 0 1 1.81 1.147L18 6H6l1.345-2.853z" />
-                <path d="M2 6h20" />
-                <path d="M10 11v5" />
-                <path d="M14 11v5" />
-            </svg>
-        </button>
-        <button id="settings-btn" class="btn icon-btn" title="Show/slide Settings Bar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" display="block"
-                id="Gear">
-                <path
-                    d="M14 3.269C14 2.568 13.432 2 12.731 2H11.27C10.568 2 10 2.568 10 3.269v0c0 .578-.396 1.074-.935 1.286-.085.034-.17.07-.253.106-.531.23-1.162.16-1.572-.249v0a1.269 1.269 0 0 0-1.794 0L4.412 5.446a1.269 1.269 0 0 0 0 1.794v0c.41.41.48 1.04.248 1.572a7.946 7.946 0 0 0-.105.253c-.212.539-.708.935-1.286.935v0C2.568 10 2 10.568 2 11.269v1.462C2 13.432 2.568 14 3.269 14v0c.578 0 1.074.396 1.286.935.034.085.07.17.105.253.231.531.161 1.162-.248 1.572v0a1.269 1.269 0 0 0 0 1.794l1.034 1.034a1.269 1.269 0 0 0 1.794 0v0c.41-.41 1.04-.48 1.572-.249.083.037.168.072.253.106.539.212.935.708.935 1.286v0c0 .701.568 1.269 1.269 1.269h1.462c.701 0 1.269-.568 1.269-1.269v0c0-.578.396-1.074.935-1.287.085-.033.17-.068.253-.104.531-.232 1.162-.161 1.571.248v0a1.269 1.269 0 0 0 1.795 0l1.034-1.034a1.269 1.269 0 0 0 0-1.794v0c-.41-.41-.48-1.04-.249-1.572.037-.083.072-.168.106-.253.212-.539.708-.935 1.286-.935v0c.701 0 1.269-.568 1.269-1.269V11.27c0-.701-.568-1.269-1.269-1.269v0c-.578 0-1.074-.396-1.287-.935a7.755 7.755 0 0 0-.105-.253c-.23-.531-.16-1.162.249-1.572v0a1.269 1.269 0 0 0 0-1.794l-1.034-1.034a1.269 1.269 0 0 0-1.794 0v0c-.41.41-1.04.48-1.572.249a7.913 7.913 0 0 0-.253-.106C14.396 4.343 14 3.847 14 3.27v0z" />
-                <path d="M16 12a4 4 0 1 1-8 0 4 4 0 0 1 8 0z" />
-            </svg>
-        </button>
+      <button
+        id="clear-data-btn"
+        class="btn icon-btn"
+        title="Clear Past Chart Data"
+      >
+        <span class="material-icons-outlined">delete</span>
+      </button>
+      <button
+        id="settings-btn"
+        class="btn icon-btn"
+        title="Show/slide Settings Bar"
+      >
+        <span class="material-icons-outlined">settings</span>
+      </button>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
-    <script src="script.js"></script>
-</body>
-
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.4.1/dist/chart.min.js"></script>
+  <script src="script.js"></script>
 </html>
