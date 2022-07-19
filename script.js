@@ -151,6 +151,8 @@ function roundOver() {
     ? 0
     : ((correctCount / charCount) * 100).toFixed(0) + "%";
   endGameContainer.style.display = "flex";
+  setTimeout(() => resetBtn.focus(), 1000)
+  // resetBtn.focus();
   settingsContainer.classList.remove("slide");
   startBtn.classList.remove("hidden");
   cancelBtn.classList.add("hidden");

@@ -18,6 +18,7 @@
   --chart-secondary: #c99cc6;
   --chart-point: #553e4e;
   --overlay: rgba(0, 0, 0, 0.8);
+  
   --container-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.4);
   --focus-shadow: 0px 7.5px 10px -5px var(--primary-text);
   --focus-accent-shadow: 0px 7.5px 10px -5px var(--accent);
@@ -30,7 +31,6 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  /* background: linear-gradient(45deg, var(--secondary), var(--primary-container)); */
   background-color: var(--primary-container);
   color: var(--primary-text);
   min-height: 100%;
@@ -78,7 +78,7 @@ svg {
   border-color: var(--warning);
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   transform: scale(1.15);
 }
 
