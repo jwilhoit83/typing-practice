@@ -10,7 +10,7 @@
   --chart-primary: #bdbdbd;
   --chart-secondary: #f5f5f5;
   --chart-point: #212121;
-  --clr-border: rgba(238, 238, 238, 0.3);
+  --clr-border: rgba(224, 224, 224, 0.5);
 }
 
 .light {
@@ -27,6 +27,7 @@
   --chart-secondary: #e0e0e0;
   --chart-point: #424242;
   --overlay: rgba(255, 255, 255, 0.8);
+  --clr-border: rgba(66, 66, 66, 0.5);
 }
 
 .two-buck-chuck {
@@ -42,6 +43,7 @@
   --chart-primary: #f7f7ee;
   --chart-secondary: #c99cc6;
   --chart-point: #553e4e;
+  --clr-border: rgba(246, 162, 177, 0.5);
 }
 
 .zen-garden {
@@ -58,13 +60,14 @@
   --chart-secondary: #fbebd0;
   --chart-point: #6e876e;
   --overlay: rgba(255, 255, 255, 0.8);
+  --clr-border: rgba(103, 126, 103, 0.5);
 }
 
 .indigo-khaki {
   --primary: #153b50;
   --primary-container: #102d3c;
   --secondary: #1a4861;
-  --accent: #878aab;
+  --accent: rgb(135, 138, 171);
   --primary-text: #cfb9a5;
   --success: #d9b726;
   --warning: #a5392a;
@@ -73,13 +76,14 @@
   --chart-primary: #869cac;
   --chart-secondary: #878cc5;
   --chart-point: #153b50;
+  --clr-border: rgba(135, 138, 171, 0.5);
 }
 
 .independent-coral {
   --primary: #323848;
   --primary-container: #3f465a;
   --secondary: #495b55;
-  --accent: #ed9390;
+  --accent: rgb(237, 147, 144);
   --primary-text: #a2c3a4;
   --success: #8ce481;
   --warning: #ec6f81;
@@ -88,13 +92,14 @@
   --chart-primary: #ed9390;
   --chart-secondary: #c4f1be;
   --chart-point: #495b55;
+  --clr-border: rgba(237, 147, 144, 0.5);
 }
 
 .vinyard {
   --primary: #423856;
   --primary-container: #473c5d;
   --secondary: #726194;
-  --accent: #619e91;
+  --accent: rgb(97, 158, 145);
   --primary-text: #babaf3;
   --success: #c4ebc8;
   --warning: #ee6c4d;
@@ -103,13 +108,14 @@
   --chart-primary: #619e91;
   --chart-secondary: #ada2c3;
   --chart-point: #423856;
+  --clr-border: rgba(97, 158, 145, 0.5);
 }
 
 .nord {
   --primary: #2e3140;
   --primary-container: #3c4053;
   --secondary: #484f62;
-  --accent: #e0b1df;
+  --accent: rgb(224, 177, 223);
   --primary-text: #7d92a3;
   --success: #7a9d7f;
   --warning: #bd5d6b;
@@ -118,13 +124,14 @@
   --chart-primary: #eecd9a;
   --chart-secondary: #79b6d3;
   --chart-point: #2e3140;
+  --clr-border: rgba(224, 177, 223, 0.5);
 }
 
 .solarized-dark {
   --primary: #00252e;
   --primary-container: #003d4d;
   --secondary: #114952;
-  --accent: #3787c4;
+  --accent: rgb(55, 135, 196);
   --primary-text: #268985;
   --success: #d9b726;
   --warning: #a5392a;
@@ -133,13 +140,14 @@
   --chart-primary: #7b519d;
   --chart-secondary: #d9b726;
   --chart-point: #00232c;
+  --clr-border: rgba(55, 135, 196, 0.5);
 }
 
 .dracula {
   --primary: #282a36;
   --primary-container: #282a36;
   --secondary: #44475a;
-  --accent: #ad78f7;
+  --accent: rgb(173, 120, 247);
   --primary-text: #d3b7fb;
   --success: #ffb86c;
   --warning: #ff5555;
@@ -148,13 +156,14 @@
   --chart-primary: #8be9fd;
   --chart-secondary: #6272a4;
   --chart-point: #282a36;
+  --clr-border: rgba(173, 120, 247, 0.5);
 }
 
 .olivia {
   --primary: #1a1a1a;
   --primary-container: #2b2b2b;
   --secondary: #3c3c3c;
-  --accent: #f1beb0;
+  --accent: rgb(241, 190, 176);
   --primary-text: #e1dbd1;
   --warning: #ec6f81;
   --success: #8db580;
@@ -163,4 +172,5 @@
   --chart-primary: #e1dbd1;
   --chart-secondary: #f1beb0;
   --chart-point: #1a1a1a;
+  --clr-border: rgba(241, 190, 176, 0.5);
 }
